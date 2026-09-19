@@ -1,12 +1,32 @@
 import { Hono } from "hono";
-import { renderer } from "./renderer";
+import { csrf } from "hono/csrf";
+import { HTTPException } from "hono/http-exception";
+import { renderer } from "#/src/interfaces/middleware/renderer";
+import { homeRoutes } from "#/src/interfaces/routes";
+import { Template as ErrorTemplate } from "#/src/interfaces/routes/error/template";
+import { Template as NotFoundTemplate } from "#/src/interfaces/routes/not-found/template";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: CloudflareBindings }>();
 
 app.use(renderer);
+app.use(csrf());
 
-app.get("/", (c) => {
-	return c.render(<h1>Hello!</h1>);
+app.route("/", homeRoutes);
+
+app.notFound((c) => {
+	c.status(404);
+	return c.render(<NotFoundTemplate />);
+});
+
+app.onError((error, c) => {
+	// CSRF の 403 など、意図して投げられた HTTP エラーはそのまま返す
+	if (error instanceof HTTPException) {
+		return error.getResponse();
+	}
+
+	console.error("Unhandled error", error);
+	c.status(500);
+	return c.render(<ErrorTemplate />);
 });
 
 export default app;
