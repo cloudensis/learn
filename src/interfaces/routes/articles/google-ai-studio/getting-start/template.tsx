@@ -1,6 +1,6 @@
 export function Template() {
 	return (
-		<article>
+		<article class="prose-sm mx-auto max-w-5xl p-5">
 			<h1>【初学者向け】Google AI Studioでwebアプリを作ってみよう</h1>
 
 			<p>
