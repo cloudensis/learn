@@ -25,14 +25,14 @@ export function Template() {
 
 			<h2>Google AI Studio を開く</h2>
 			<p>
-				まずは{" "}
+				まずは
 				<a
 					href="https://aistudio.google.com/"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					Google AI Studio
-				</a>{" "}
+				</a>
 				にアクセスします。右上の「Get started」から Google
 				アカウントでログインするだけで、すぐに使いはじめられます。
 			</p>
@@ -105,8 +105,8 @@ export function Template() {
 			</p>
 			<p>
 				今回は指示していない機能まで作り込まれていました。左側のチャットには、
-				シラバスの文章を貼り付けると授業名や教室を自動で読み取る機能や、入力したデータを{" "}
-				<code>localStorage</code>{" "}
+				シラバスの文章を貼り付けると授業名や教室を自動で読み取る機能や、入力したデータを
+				<code>localStorage</code>
 				に保存する仕組みを追加した、といった説明が並んでいます。
 			</p>
 
