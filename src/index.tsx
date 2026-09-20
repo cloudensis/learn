@@ -13,10 +13,7 @@ app.use(renderer);
 app.use(csrf());
 
 app.route("/", homeRoutes);
-app.route(
-	"/articles/google-ai-studio/getting-start",
-	googleAiStudioGettingStartRoutes,
-);
+app.route("/", googleAiStudioGettingStartRoutes);
 
 app.notFound((c) => {
 	c.status(404);

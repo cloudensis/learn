@@ -5,6 +5,9 @@ export const googleAiStudioGettingStartRoutes = new Hono<{
 	Bindings: CloudflareBindings;
 }>();
 
-googleAiStudioGettingStartRoutes.get("/", async (c) => {
-	return c.render(<Template />);
-});
+googleAiStudioGettingStartRoutes.get(
+	"/articles/google-ai-studio/getting-start",
+	async (c) => {
+		return c.render(<Template />);
+	},
+);
