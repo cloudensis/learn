@@ -1,8 +1,10 @@
 import { Hono } from "hono";
 import { Template } from "./template";
 
-export const routes = new Hono<{ Bindings: CloudflareBindings }>();
+export const googleAiStudioGettingStartRoutes = new Hono<{
+	Bindings: CloudflareBindings;
+}>();
 
-routes.get("/", async (c) => {
+googleAiStudioGettingStartRoutes.get("/", async (c) => {
 	return c.render(<Template />);
 });
