@@ -1,4 +1,8 @@
-import type { Book, BookChapter } from "#/src/domains/book/book";
+import {
+	type Book,
+	type BookChapter,
+	chapterLabel,
+} from "#/src/domains/book/book";
 
 type ChapterNavProps = {
 	book: Book;
@@ -15,21 +19,21 @@ export function ChapterNav({ book, chapter }: ChapterNavProps) {
 			: undefined;
 
 	return (
-		<nav class="mt-12 space-y-3 border-t pt-6 text-sm">
+		<nav class="space-y-3 border-border border-t pt-6 text-sm">
 			{previous && (
 				<p>
 					<a
 						href={`/books/${book.slug}/${previous.slug}`}
 						class="hover:underline"
 					>
-						← 第{previous.number}章 {previous.title}
+						← {chapterLabel(previous)} {previous.title}
 					</a>
 				</p>
 			)}
 			{next && (
 				<p>
 					<a href={`/books/${book.slug}/${next.slug}`} class="hover:underline">
-						第{next.number}章 {next.title} →
+						{chapterLabel(next)} {next.title} →
 					</a>
 				</p>
 			)}

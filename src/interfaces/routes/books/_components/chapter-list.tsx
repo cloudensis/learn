@@ -1,4 +1,4 @@
-import type { Book } from "#/src/domains/book/book";
+import { type Book, chapterLabel } from "#/src/domains/book/book";
 
 type ChapterListProps = {
 	book: Book;
@@ -14,9 +14,12 @@ export function ChapterList({ book }: ChapterListProps) {
 						class="group block space-y-1"
 					>
 						<h3 class="font-medium group-hover:underline">
-							第{chapter.number}章 {chapter.title}
+							{chapterLabel(chapter)} {chapter.title}
 						</h3>
 						<p class="text-sm">{chapter.description}</p>
+						<p class="text-fg-muted text-sm">
+							目安 {chapter.estimatedMinutes}分 ／ {chapter.deliverable}
+						</p>
 					</a>
 				</li>
 			))}
