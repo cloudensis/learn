@@ -18,7 +18,7 @@ export function AskAi({
 	return (
 		<div class="space-y-2">
 			<p class="font-medium text-sm">{title}</p>
-			<CodeBlock>{children}</CodeBlock>
+			<CodeBlock lang="markdown">{children}</CodeBlock>
 			{note && <p class="text-fg-muted text-sm">{note}</p>}
 		</div>
 	);
