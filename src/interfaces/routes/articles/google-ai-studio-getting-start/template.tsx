@@ -1,9 +1,10 @@
 import { CodeBlock } from "@cloudensis/design-system/components/ui/code-block";
+import meta from "./meta";
 
 export function Template() {
 	return (
 		<article class="prose mx-auto max-w-5xl p-5">
-			<h1>【初学者向け】Google AI Studioでwebアプリを作ってみよう</h1>
+			<h1>{meta.title}</h1>
 
 			<p>
 				Google AI Studio は Google が提供するアプリ開発プラットフォームです。
