@@ -6,4 +6,6 @@ export type Article = {
 	description: string;
 	/** 公開日（YYYY-MM-DD）。一覧の並び替えに使用。 */
 	publishedAt: string;
+	/** OGP画像のパス。未指定の場合は public/ogp.png が使われる。 */
+	ogp?: string;
 };
