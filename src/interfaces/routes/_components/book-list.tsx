@@ -9,15 +9,10 @@ export function BookList({ books }: BookListProps) {
 		<ul class="space-y-6">
 			{books.map((book) => (
 				<li key={book.slug}>
-					<a
-						href={book.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group block space-y-1"
-					>
+					<a href={`/books/${book.slug}`} class="group block space-y-1">
 						<h3 class="font-medium group-hover:underline">{book.title}</h3>
-						<p class="text-sm">{book.author}</p>
 						<p class="text-sm">{book.description}</p>
+						<p class="text-sm">全{book.chapters.length}章</p>
 					</a>
 				</li>
 			))}

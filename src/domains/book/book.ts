@@ -1,12 +1,23 @@
+export type BookChapter = {
+	/** URL の /books/<本の slug>/ 以下に使われる識別子。 */
+	slug: string;
+	/** 章番号（1 始まり）。目次の並び替えに使用。 */
+	number: number;
+	title: string;
+	/** 目次に表示する要約文。 */
+	description: string;
+};
+
 export type Book = {
-	/** 一覧内で一意になる識別子。 */
+	/** URL の /books/ 以下に使われる識別子。 */
 	slug: string;
 	title: string;
-	author: string;
-	/** 購入ページなど、書籍の詳細を確認できる外部リンク。 */
-	url: string;
-	/** 一覧に表示する紹介文。 */
+	/** 一覧に表示する要約文。 */
 	description: string;
-	/** 紹介日（YYYY-MM-DD）。一覧の並び替えに使用。 */
+	/** 公開日（YYYY-MM-DD）。一覧の並び替えに使用。 */
 	publishedAt: string;
+	/** OGP画像のパス。未指定の場合は public/ogp.png が使われる。 */
+	ogp?: string;
+	/** 収録している章の一覧。章番号の昇順に並ぶ。 */
+	chapters: BookChapter[];
 };
