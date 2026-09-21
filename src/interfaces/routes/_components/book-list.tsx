@@ -5,10 +5,6 @@ type BookListProps = {
 };
 
 export function BookList({ books }: BookListProps) {
-	if (books.length === 0) {
-		return <p class="text-sm">まだ紹介した書籍がありません。</p>;
-	}
-
 	return (
 		<ul class="space-y-6">
 			{books.map((book) => (

@@ -13,13 +13,17 @@ export function Template() {
 				<p>{site.description}</p>
 			</div>
 
-			<Section title="記事">
-				<ArticleList articles={articles} />
-			</Section>
+			{articles.length !== 0 && (
+				<Section title="記事">
+					<ArticleList articles={articles} />
+				</Section>
+			)}
 
-			<Section title="書籍">
-				<BookList books={books} />
-			</Section>
+			{books.length !== 0 && (
+				<Section title="書籍">
+					<BookList books={books} />
+				</Section>
+			)}
 		</div>
 	);
 }

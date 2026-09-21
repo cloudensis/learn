@@ -5,10 +5,6 @@ type ArticleListProps = {
 };
 
 export function ArticleList({ articles }: ArticleListProps) {
-	if (articles.length === 0) {
-		return <p class="text-sm">まだ記事がありません。</p>;
-	}
-
 	return (
 		<ul class="space-y-6">
 			{articles.map((article) => (
