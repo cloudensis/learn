@@ -1,9 +1,9 @@
 import { Section } from "@cloudensis/design-system/components/layout/section";
-import { books } from "#/src/domains/book/books";
 import { site } from "#/src/domains/company/constants";
 import { ArticleList } from "./_components/article-list";
 import { BookList } from "./_components/book-list";
 import { articles } from "./articles/registry";
+import { books } from "./books/registry";
 
 export function Template() {
 	return (
