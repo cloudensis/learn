@@ -5,5 +5,9 @@ import ssrPlugin from "vite-ssr-components/plugin";
 
 export default defineConfig({
 	resolve: { alias: { "#/": "/" } },
-	plugins: [cloudflare(), tailwindcss(), ssrPlugin()],
+	plugins: [
+		cloudflare(),
+		tailwindcss(),
+		ssrPlugin({ hotReload: { morph: false } }),
+	],
 });
