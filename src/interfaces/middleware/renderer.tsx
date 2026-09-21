@@ -1,8 +1,8 @@
+import { Footer } from "@cloudensis/design-system/components/layout/footer";
+import { Header } from "@cloudensis/design-system/components/layout/header";
 import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
 import { Link, ViteClient } from "vite-ssr-components/hono";
 import { site } from "#/src/domains/company/constants";
-import { Footer } from "#/src/interfaces/components/layout/footer";
-import { Header } from "#/src/interfaces/components/layout/header";
 
 export const renderer = jsxRenderer(({ children }) => {
 	const c = useRequestContext();
@@ -33,10 +33,15 @@ export const renderer = jsxRenderer(({ children }) => {
 				<ViteClient />
 				<Link href="/src/interfaces/styles/global.css" rel="stylesheet" />
 			</head>
-			<body class="flex min-h-svh flex-col bg-neutral-100 font-light text-neutral-600">
-				<Header />
+			<body class="flex min-h-svh flex-col">
+				<Header brand={site.name} />
 				<main class="flex-1">{children}</main>
-				<Footer />
+				<Footer
+					copyrightHolder={site.name}
+					links={[
+						{ href: "/privacy", label: "プライバシーポリシー", external: true },
+					]}
+				/>
 			</body>
 		</html>
 	);

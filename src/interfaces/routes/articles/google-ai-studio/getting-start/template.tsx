@@ -1,6 +1,8 @@
+import { CodeBlock } from "@cloudensis/design-system/components/ui/code-block";
+
 export function Template() {
 	return (
-		<article class="prose-sm mx-auto max-w-5xl prose-pre:bg-neutral-800 p-5 prose-pre:text-neutral-200">
+		<article class="prose mx-auto max-w-5xl p-5">
 			<h1>【初学者向け】Google AI Studioでwebアプリを作ってみよう</h1>
 
 			<p>
@@ -56,13 +58,11 @@ export function Template() {
 				app」を選び、作りたいアプリの内容を入力します。今回は次のように書きました。
 			</p>
 
-			<pre>
-				<code>
-					{`大学の時間割管理アプリを作成してください。
+			<CodeBlock>
+				{`大学の時間割管理アプリを作成してください。
 それぞれのコマであと何回休めるか管理、表示できるようにしてください。
 ダークトーンでモダンなデザインにして下さい。`}
-				</code>
-			</pre>
+			</CodeBlock>
 
 			<p>
 				ポイントは「何を作るのか」「どんな機能が欲しいのか」「どんな見た目にしたいのか」を分けて伝えることです。
@@ -161,11 +161,9 @@ export function Template() {
 				今回はスマートフォンで開くと情報量が多すぎたので、次のように依頼しました。
 			</p>
 
-			<pre>
-				<code>
-					{`スマホで見るには要素が多くて閲覧、操作がしづらいので、最低限の要素のみに絞って下さい。`}
-				</code>
-			</pre>
+			<CodeBlock>
+				{`スマホで見るには要素が多くて閲覧、操作がしづらいので、最低限の要素のみに絞って下さい。`}
+			</CodeBlock>
 
 			<figure>
 				<img
