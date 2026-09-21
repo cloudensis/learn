@@ -3,7 +3,7 @@ import { Template } from "./template";
 
 const routes = new Hono<{ Bindings: CloudflareBindings }>();
 
-routes.get("/", async (c) => {
+routes.get("/articles/google-ai-studio-getting-start", async (c) => {
 	return c.render(<Template />);
 });
 

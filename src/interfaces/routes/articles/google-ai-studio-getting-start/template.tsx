@@ -17,7 +17,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio.png"
+					src="/articles/google-ai-studio-getting-start/aistudio.png"
 					alt="Google AI Studio で時間割管理アプリを作成している画面"
 					width="1815"
 					height="1518"
@@ -44,7 +44,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_get_started.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_get_started.png"
 					alt="Google AI Studio のトップページ"
 					width="1815"
 					height="1518"
@@ -72,7 +72,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_prompt.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_prompt.png"
 					alt="New app の画面でプロンプトを入力している様子"
 					width="2848"
 					height="2362"
@@ -90,7 +90,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_design.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_design.png"
 					alt="デザインの候補から Clean Minimalism を選択している画面"
 					width="2848"
 					height="2362"
@@ -112,7 +112,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_result.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_result.png"
 					alt="生成された時間割管理アプリのプレビュー画面"
 					width="3548"
 					height="2362"
@@ -135,7 +135,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_share.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_share.png"
 					alt="Share パネルで公開範囲を設定している画面"
 					width="2612"
 					height="2362"
@@ -147,7 +147,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_shared_app.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_shared_app.png"
 					alt="共有リンクから開いた時間割管理アプリ"
 					width="2960"
 					height="2362"
@@ -167,7 +167,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_additional_prompt.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_additional_prompt.png"
 					alt="チャット欄に追加のプロンプトを入力している画面"
 					width="2508"
 					height="2362"
@@ -182,7 +182,7 @@ export function Template() {
 
 			<figure>
 				<img
-					src="/articles/google-ai-studio/getting-start/aistudio_shared_app_updated.png"
+					src="/articles/google-ai-studio-getting-start/aistudio_shared_app_updated.png"
 					alt="スマートフォン向けに要素を絞った時間割管理アプリ"
 					width="1796"
 					height="2362"
