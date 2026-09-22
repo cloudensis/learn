@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { askStyles } from "../../_components/ask-styles";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -138,13 +139,13 @@ export function Template() {
 					この本のAIに送る文には、必要な前提があらかじめ入れてあります。
 				</p>
 
-				<h3>3. 範囲を区切って聞く</h3>
+				<h3 id="ask-one-point">3. 範囲を区切って聞く</h3>
 				<p>
 					分からないことが出てきたら、その一点だけを、範囲を区切って聞きます。
-					これを<strong>型2・部分を聞く</strong>
+					これを<strong>一点だけ聞く</strong>
 					と呼び、この本でいちばん多く使う聞き方です。
 				</p>
-				<AskAi title="型2・部分を聞く">
+				<AskAi title="一点だけ聞く">
 					{`「（分からない言葉）」について教えてください。
 
 - 何のためのものかを、一言で説明してください
@@ -177,6 +178,21 @@ export function Template() {
 					どちらを使えるかは、場面によって変わります。
 					各章の「確かめる」で、その場面に合った確かめ方を示します。
 				</p>
+
+				<h2 id="ask-styles">この本で使う5つの聞き方</h2>
+				<p>
+					コツ3の「一点だけ聞く」のように、この本では、場面ごとに決まった聞き方をくり返し使います。
+					全部で5つあり、必要になった章で1つずつ教えます。
+					いまは名前だけ眺めておいてください。
+					本文に「第4章の「選び方を聞く」」のように出てきたら、リンクから教えた場所に戻れます。
+				</p>
+				<ul>
+					{Object.values(askStyles).map((style) => (
+						<li key={style.id}>
+							<strong>{style.name}</strong>（第{style.chapter}章）：{style.use}
+						</li>
+					))}
+				</ul>
 
 				<h2 id="when-stuck">詰まったときの共通ルール</h2>
 				<p>
@@ -215,7 +231,7 @@ export function Template() {
 						小さなページを作ってもらい、その場でボタンを押して数字が増えた
 					</li>
 					<li>
-						型2で「ブラウザ」について聞き、読み切れる長さの答えが返ってきた
+						「一点だけ聞く」で「ブラウザ」について聞き、読み切れる長さの答えが返ってきた
 					</li>
 				</ul>
 
@@ -245,7 +261,7 @@ export function Template() {
 								"無料の範囲では、その機能が使える回数や条件が決まっていることがあります。表示された文をそのまま伝えて、同じ会話で理由を聞いてください。それでも使えなければ、別のツールに切り替えてかまいません。",
 						},
 						{
-							symptom: "型2の答えが、長すぎたり難しすぎたりした",
+							symptom: "「一点だけ聞く」の答えが、長すぎたり難しすぎたりした",
 							action:
 								"「さきほどの説明を、もっと短く、専門用語を使わずに言い直してください」と送ってください。聞き直すのは、何度でもかまいません。",
 						},
@@ -256,7 +272,7 @@ export function Template() {
 					items={[
 						"使うAIツールを決めて、新しい会話を始められる",
 						"小さなページを作ってもらい、その場で動くことを確かめた",
-						"型2を1回使ってみた",
+						"「一点だけ聞く」を1回使ってみた",
 						"詰まったときの共通ルールが、この章にあると知っている",
 					]}
 				/>

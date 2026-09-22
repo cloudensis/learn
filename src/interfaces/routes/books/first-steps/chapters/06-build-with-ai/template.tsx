@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -49,7 +50,9 @@ export function Template() {
 				<p>
 					機能を決めたら、いきなり作ってもらう前に、
 					<strong>どう作れるか</strong>
-					を聞いておきます。 第4章で使った型3です。
+					を聞いておきます。
+					<AskStyleLink style={askStyles.howToChoose} />
+					を使います。
 					作り方を知っていると、AIが出してきたものが自分の思っていたものと違うときに、どこが違うのか言えるようになります。
 				</p>
 				<p>
@@ -102,7 +105,9 @@ export function Template() {
 					必ず、ファイルの中身をすべて選択してから貼り付けてください。
 				</p>
 				<p>
-					動かなかったときは、第5章のエラー相談の型を使います。
+					動かなかったときは、
+					<AskStyleLink style={askStyles.error} />
+					を使います。
 					コンソールを開いて赤い文字を探し、同じ会話の続きで相談してください。
 				</p>
 
@@ -167,7 +172,7 @@ export function Template() {
 				<Checklist
 					items={[
 						"足す機能を1つ決めた",
-						"型3で作り方の選択肢を聞き、1つ選んだ",
+						"「選び方を聞く」で作り方の選択肢を聞き、1つ選んだ",
 						"作る前に my-game-backup を取り直した",
 						"足した機能と、前からあった機能の両方が動くことを確かめた",
 					]}

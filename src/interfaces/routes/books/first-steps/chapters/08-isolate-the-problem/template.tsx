@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -72,7 +73,8 @@ export function Template() {
 				<h2>1. 症状を言葉にする</h2>
 				<p>
 					最初に、何が起きているかを文章にします。
-					第5章のエラー相談の型のうち、「期待したこと」と「実際に起きたこと」の2つを、頭の中で埋めてみてください。
+					<AskStyleLink style={askStyles.error} />
+					で渡す項目のうち、「期待したこと」と「実際に起きたこと」の2つを、頭の中で埋めてみてください。
 				</p>
 				<p>
 					「ロゴが出ない」だけでは足りません。
@@ -147,7 +149,8 @@ export function Template() {
 				<h2>相談する</h2>
 				<p>
 					原因の見当がついたら、あるいは見当がつかなくても手がかりが集まったら、AIに相談します。
-					第5章のエラー相談の型に、<strong>切り分けで分かったこと</strong>
+					<AskStyleLink style={askStyles.error} />
+					の項目に、<strong>切り分けで分かったこと</strong>
 					を足して送ります。
 				</p>
 				<AskAi title="新しい会話で送ってください">
@@ -185,7 +188,9 @@ export function Template() {
 					すべての開き方でロゴが表示されれば、直ったと言えます。
 				</p>
 				<p>
-					AIの説明に「〇〇の仕組みのため」のような理由が含まれていたら、第7章で使った公式資料を参照させる型で、それが公式資料にも書かれているかを確かめてみてください。
+					AIの説明に「〇〇の仕組みのため」のような理由が含まれていたら、
+					<AskStyleLink style={askStyles.officialDocs} />
+					で、それが公式資料にも書かれているかを確かめてみてください。
 					理由まで確かめておくと、次に似た問題に出会ったとき、自分で気づけるようになります。
 				</p>
 

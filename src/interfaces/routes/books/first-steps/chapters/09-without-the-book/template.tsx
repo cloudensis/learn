@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -75,24 +76,24 @@ export function Template() {
 				</p>
 				<ul>
 					<li>
-						<strong>型1・全体像を聞く</strong>
-						（第3章）：その機能を作るのに、何が関係するのかを知りたいとき
+						<AskStyleLink style={askStyles.bigPicture} />
+						：その機能を作るのに、何が関係するのかを知りたいとき
 					</li>
 					<li>
-						<strong>型2・部分を聞く</strong>
-						（第1章）：答えの中に分からない言葉が出てきたとき
+						<AskStyleLink style={askStyles.onePoint} />
+						：答えの中に分からない言葉が出てきたとき
 					</li>
 					<li>
-						<strong>型3・理由を聞く</strong>
-						（第4章）：作り方がいくつかあって、どれにするか決めたいとき
+						<AskStyleLink style={askStyles.howToChoose} />
+						：作り方がいくつかあって、どれにするか決めたいとき
 					</li>
 					<li>
-						<strong>公式資料を参照させる型</strong>
-						（第7章）：答えが正しいか、古くないかを確かめたいとき
+						<AskStyleLink style={askStyles.officialDocs} />
+						：答えが正しいか、古くないかを確かめたいとき
 					</li>
 					<li>
-						<strong>エラー相談の型</strong>
-						（第5章）と<strong>切り分けの手順</strong>
+						<AskStyleLink style={askStyles.error} />と
+						<strong>切り分けの手順</strong>
 						（第8章）：動かないとき
 					</li>
 					<li>
@@ -114,7 +115,7 @@ export function Template() {
 					</a>
 					という資料が、公式資料として広く使われています。
 					ブラウザを作っている会社も協力して整えている資料で、ページごとに、その機能がどのブラウザで使えるかの一覧も載っています。
-					公式資料を参照させる型で、ここを読ませてみてください。
+					「公式資料を読ませる」で、ここを読ませてみてください。
 					自分で機能を選んだときは、使いたいブラウザやスマートフォンで動くかも、この一覧で先に確かめておくと安心です。
 				</p>
 
@@ -147,7 +148,7 @@ export function Template() {
 						{
 							symptom: "何から手をつければいいか分からない",
 							action:
-								"使える道具の一覧を上から見て、いま使えそうなものを1つ選んでください。多くの場合、最初に使うのは型1か型3です。",
+								"使える道具の一覧を上から見て、いま使えそうなものを1つ選んでください。多くの場合、最初に使うのは「全体像を聞く」か「選び方を聞く」です。",
 						},
 						{
 							symptom: "AIの答えが、公式資料と食い違っていた",
@@ -186,7 +187,7 @@ export function Template() {
 					{`第9章を終えました。
 この本の手順なしで、（足した機能）をゲームに足して、公開し直しました。
 
-- 使った聞き方：（型1、型3など）
+- 使った聞き方：（全体像を聞く、選び方を聞く など）
 - 確かめ方：（動かして確かめたこと、確かめた公式資料）
 - つまずいたところと、どう抜け出したか：（一言で）`}
 				</AskAi>
