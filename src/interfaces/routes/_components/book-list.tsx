@@ -10,8 +10,8 @@ export function BookList({ books }: BookListProps) {
 			{books.map((book) => (
 				<li key={book.slug}>
 					<a href={`/books/${book.slug}`} class="group block space-y-2">
-						<div class="flex aspect-[5/7] rounded-r border border-border border-l-8 bg-surface p-3 shadow transition group-hover:-translate-y-1 group-hover:shadow-lg">
-							<div class="flex flex-1 items-center justify-center border border-border p-2">
+						<div class="flex aspect-[5/7] rounded-r border-neutral-950 border-l-8 bg-neutral-800 p-3 text-neutral-100 shadow transition group-hover:-translate-y-1 group-hover:shadow-lg">
+							<div class="flex flex-1 items-center justify-center border border-neutral-500 p-2">
 								<h3 class="text-center font-medium">{book.title}</h3>
 							</div>
 						</div>
