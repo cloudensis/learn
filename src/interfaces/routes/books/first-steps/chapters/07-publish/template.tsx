@@ -140,6 +140,17 @@ https://www.cloudflare.com/drop/
 				<p>
 					画面の操作で迷ったら、見えている画面の様子を、同じ会話の続きでそのまま伝えて聞いてください。
 				</p>
+				<p>
+					公開から引き取りまでの流れを、もう少し具体的に確かめながら進めたい人は、
+					<a
+						href="/articles/cloudflare-drop"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						作ったゲームやWebサイトを公開する：Cloudflare Drop の使い方
+					</a>
+					を見ながら進めてください。
+				</p>
 
 				<h2>確かめる</h2>
 				<p>この章では、確かめ方を2つとも使います。</p>
