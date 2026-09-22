@@ -1,5 +1,6 @@
 import { Section } from "@cloudensis/design-system/components/layout/section";
 import { totalMinutes } from "#/src/domains/book/book";
+import { HomeLink } from "../../_components/home-link";
 import { ChapterList } from "../_components/chapter-list";
 import meta from "./meta";
 
@@ -66,6 +67,10 @@ export function Template() {
 					</li>
 				</ul>
 			</Section>
+
+			<nav class="border-border border-t pt-6">
+				<HomeLink />
+			</nav>
 		</div>
 	);
 }
