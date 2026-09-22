@@ -31,8 +31,9 @@ export function Template() {
 				<h2>壊す前に、コピーを取る</h2>
 				<p>
 					まず、<code>my-game</code>{" "}
-					フォルダをまるごとコピーして、同じドキュメントの中に{" "}
-					<code>my-game-backup</code> という名前で置いてください。
+					フォルダをまるごとコピーして、同じドキュメント（Mac
+					では「書類」）の中に <code>my-game-backup</code>{" "}
+					という名前で置いてください。
 				</p>
 				<p>
 					これが、<strong>最後にうまく動いていた状態</strong>
@@ -68,7 +69,8 @@ export function Template() {
 					に書き換えて保存してください（「s」を1文字足すだけです）。
 				</p>
 				<p>
-					ブラウザを再読み込みすると、見た目は出るのに、ゲームが動かなくなっているはずです。
+					ブラウザを再読み込みすると、ゲームが動かなくなっているはずです。
+					ゲームによっては、画面の一部が表示されなくなることもあります。
 					コンソールを見てください。赤い文字で、何かが表示されています。
 				</p>
 				<p>
@@ -100,7 +102,9 @@ export function Template() {
 					</strong>
 					選び、名前の最後の1文字を消して保存してください（
 					<code>startGame</code> なら <code>startGam</code>）。
-					<code>function</code> が見つからないときは、AIに「この script.js
+					<code>function</code> が見つからないときや、見つかっても{" "}
+					<code>function ()</code>{" "}
+					のようにすぐあとに名前がないものばかりのときは、AIに「この script.js
 					の中で、ゲームを始める動きの名前と、それを使っている行を教えてください」と聞いてから進めます。
 				</p>
 				<p>
