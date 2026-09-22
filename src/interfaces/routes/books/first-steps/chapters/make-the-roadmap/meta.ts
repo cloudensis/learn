@@ -2,13 +2,13 @@ import type { BookChapter } from "#/src/domains/book/book";
 
 const meta: BookChapter = {
 	slug: "make-the-roadmap",
-	number: 1,
+	number: 2,
 	title: "ロードマップをつくる",
 	description:
-		"ソフトウェア開発の全体像をAIに聞いて、自分用のロードマップを1枚つくります。この先、迷うたびに戻ってくる1枚になります。",
-	goal: "ソフトウェア開発の全体像と、自分の現在地を言える",
-	deliverable: "自分用のロードマップ1枚と、現在地の印",
-	estimatedMinutes: 40,
+		"第1章で見つけた「足りないもの」を埋めるまでの道のりを、AIに描いてもらいます。その会話は、この先ずっと現在地を確かめるための専用のチャットになります。",
+	goal: "足りないものを埋める道のりと、自分の現在地を言える",
+	deliverable: "ロードマップ用チャット",
+	estimatedMinutes: 30,
 };
 
 export default meta;
