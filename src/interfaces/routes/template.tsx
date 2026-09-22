@@ -56,15 +56,11 @@ const policies = [
 
 /** 全編でくり返し使う、AIへの質問の型。 */
 const questionTypes = [
-	{ name: "全体像を聞く", use: "迷子になったとき、最初に地図をもらう" },
-	{ name: "部分を聞く", use: "気になった一点だけを、範囲を区切って掘る" },
-	{ name: "理由を聞く", use: "選択肢と、選ぶときの基準を手に入れる" },
+	{ name: "型1・全体像を聞く", use: "迷子になったとき、最初に地図をもらう" },
+	{ name: "型2・部分を聞く", use: "気になった一点だけを、範囲を区切って掘る" },
+	{ name: "型3・理由を聞く", use: "選択肢と、選ぶときの基準を手に入れる" },
 	{
-		name: "採点させる",
-		use: "自分の言葉で説明し、分かったつもりを見つける",
-	},
-	{
-		name: "エラーを相談する",
+		name: "エラー相談の型",
 		use: "やったこと・期待・実際・エラー全文をそろえて渡す",
 	},
 	{
@@ -125,17 +121,14 @@ export function Template() {
 					毎回ちがう聞き方を覚える必要はありません。次の型を全編でくり返し使い、
 					手が覚えている状態にしていきます。使いどころと書き方は、本の序章でお伝えします。
 				</p>
-				<ol class="space-y-4 rounded border border-border bg-surface p-4">
-					{questionTypes.map((questionType, index) => (
-						<li key={questionType.name} class="flex gap-3 text-sm">
-							<span class="shrink-0 font-medium">型{index + 1}</span>
-							<div class="space-y-1">
-								<p class="font-medium">{questionType.name}</p>
-								<p class="text-fg-muted">{questionType.use}</p>
-							</div>
+				<ul class="space-y-4 rounded border border-border bg-surface p-4">
+					{questionTypes.map((questionType) => (
+						<li key={questionType.name} class="space-y-1 text-sm">
+							<p class="font-medium">{questionType.name}</p>
+							<p class="text-fg-muted">{questionType.use}</p>
 						</li>
 					))}
-				</ol>
+				</ul>
 			</Section>
 
 			<Section title="こんな方に向けて書いています">
