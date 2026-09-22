@@ -1,7 +1,7 @@
 import { Footer } from "@cloudensis/design-system/components/layout/footer";
 import { Header } from "@cloudensis/design-system/components/layout/header";
 import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
-import { Link, ViteClient } from "vite-ssr-components/hono";
+import { Link, Script, ViteClient } from "vite-ssr-components/hono";
 import { site } from "#/src/domains/company/constants";
 
 declare module "hono" {
@@ -52,6 +52,7 @@ export const renderer = jsxRenderer(
 
 					<ViteClient />
 					<Link href="/src/interfaces/styles/global.css" rel="stylesheet" />
+					<Script src="/src/interfaces/scripts/preferences.ts" />
 				</head>
 				<body class="flex min-h-svh flex-col">
 					<Header title={site.name} />
