@@ -22,7 +22,7 @@ export type Preference = {
 export const preferences: Record<string, Preference> = {
 	os: {
 		key: "os",
-		label: "パソコン",
+		label: "利用OS",
 		options: [
 			{ value: "windows", label: "Windows" },
 			{ value: "mac", label: "Mac" },
