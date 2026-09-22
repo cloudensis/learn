@@ -1,5 +1,5 @@
 export type BookChapter = {
-	/** URL の /books/<本の slug>/ 以下に使われる識別子。 */
+	/** URL の /books/<slug>/ 以下に使われる識別子。 */
 	slug: string;
 	/** 章番号。0 は序章として扱う。目次の並び替えに使用。 */
 	number: number;
