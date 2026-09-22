@@ -102,7 +102,9 @@ export function Template() {
 					</strong>
 					選び、名前の最後の1文字を消して保存してください（
 					<code>startGame</code> なら <code>startGam</code>）。
-					<code>function</code> が見つからないときは、AIに「この script.js
+					<code>function</code> が見つからないときや、見つかっても{" "}
+					<code>function ()</code>{" "}
+					のようにすぐあとに名前がないものばかりのときは、AIに「この script.js
 					の中で、ゲームを始める動きの名前と、それを使っている行を教えてください」と聞いてから進めます。
 				</p>
 				<p>
