@@ -31,8 +31,9 @@ export function Template() {
 				<h2>壊す前に、コピーを取る</h2>
 				<p>
 					まず、<code>my-game</code>{" "}
-					フォルダをまるごとコピーして、同じドキュメントの中に{" "}
-					<code>my-game-backup</code> という名前で置いてください。
+					フォルダをまるごとコピーして、同じドキュメント（Mac
+					では「書類」）の中に <code>my-game-backup</code>{" "}
+					という名前で置いてください。
 				</p>
 				<p>
 					これが、<strong>最後にうまく動いていた状態</strong>

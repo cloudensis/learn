@@ -104,8 +104,8 @@ export function Template() {
 				左側にフォルダの中身が一覧で出て、ファイルどうしを行き来しやすくなります。
 			</p>
 			<p>
-				練習として、ドキュメントフォルダの中に <code>editor-practice</code>{" "}
-				という名前のフォルダを作ってください。
+				練習として、ドキュメントフォルダ（Mac では「書類」と表示されます）の中に{" "}
+				<code>editor-practice</code> という名前のフォルダを作ってください。
 				フォルダの作り方が分からなければ、
 				<a
 					href="/articles/files-and-folders"
