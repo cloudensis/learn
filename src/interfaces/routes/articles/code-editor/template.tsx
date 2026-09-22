@@ -158,10 +158,14 @@ export function Template() {
 
 			<h2>5. 書いて、保存して、ブラウザで見る</h2>
 			<p>
-				作った <code>hello.html</code> に、次の1行だけを書いて保存してください。
+				作った <code>hello.html</code> に、次の2行だけを書いて保存してください。
 				コードを書く練習ではないので、コピーして貼り付けてかまいません。
+				1行目は、日本語が文字化けせずに表示されるようにするための指定です。
 			</p>
-			<PromptBlock lang="html">{"<h1>はじめてのページ</h1>"}</PromptBlock>
+			<PromptBlock lang="html">
+				{`<meta charset="utf-8">
+<h1>はじめてのページ</h1>`}
+			</PromptBlock>
 			<p>
 				保存したら、<code>editor-practice</code> フォルダにある{" "}
 				<code>hello.html</code> をダブルクリックして、ブラウザで開いてください。
