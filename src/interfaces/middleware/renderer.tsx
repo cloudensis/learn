@@ -59,13 +59,7 @@ export const renderer = jsxRenderer(
 					<main class="flex-1">{children}</main>
 					<Footer
 						copyrightHolder={site.name}
-						links={[
-							{
-								href: "/privacy",
-								label: "プライバシーポリシー",
-								external: true,
-							},
-						]}
+						links={[]}
 					/>
 				</body>
 			</html>
