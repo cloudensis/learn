@@ -6,13 +6,17 @@ type BookListProps = {
 
 export function BookList({ books }: BookListProps) {
 	return (
-		<ul class="space-y-6">
+		<ul class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
 			{books.map((book) => (
 				<li key={book.slug}>
-					<a href={`/books/${book.slug}`} class="group block space-y-1">
-						<h3 class="font-medium group-hover:underline">{book.title}</h3>
+					<a href={`/books/${book.slug}`} class="group block space-y-2">
+						<div class="flex aspect-[5/7] rounded-r border border-border border-l-8 bg-surface p-3 shadow transition group-hover:-translate-y-1 group-hover:shadow-lg">
+							<div class="flex flex-1 items-center justify-center border border-border p-2">
+								<h3 class="text-center font-medium">{book.title}</h3>
+							</div>
+						</div>
 						<p class="text-sm">{book.description}</p>
-						<p class="text-sm">全{book.chapters.length}章</p>
+						<p class="text-fg-muted text-sm">全{book.chapters.length}章</p>
 					</a>
 				</li>
 			))}
