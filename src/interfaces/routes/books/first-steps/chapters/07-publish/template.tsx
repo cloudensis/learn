@@ -147,7 +147,7 @@ https://www.cloudflare.com/drop/
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						フォルダを置くだけで公開する：Cloudflare Drop の使い方
+						作ったゲームやWebサイトを公開する：Cloudflare Drop の使い方
 					</a>
 					を見ながら進めてください。
 				</p>

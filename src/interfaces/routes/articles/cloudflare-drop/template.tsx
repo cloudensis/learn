@@ -96,8 +96,7 @@ export function Template() {
 			</p>
 			<PromptBlock>
 				{`次の公式資料を読んでから、質問に答えてください。
-https://developers.cloudflare.com/workers/llms.txt
-https://www.cloudflare.com/drop/
+https://www.cloudflare.com/drop/llms.txt
 
 質問：Cloudflare Drop を使って、自分のパソコンにあるフォルダ（HTML・CSS・JavaScript のファイルが入っている）を公開したいです。
 公開してから、アカウントで引き取って、ずっと残る状態にするまでの流れを教えてください。
@@ -110,9 +109,9 @@ https://www.cloudflare.com/drop/
 			</PromptBlock>
 			<p>
 				使っているAIがURLを開けない場合は、「URLを開けません」のような答えが返ってきます。
-				そのときは、自分で <code>https://www.cloudflare.com/drop/</code>{" "}
+				そのときは、自分で <code>https://www.cloudflare.com/drop/llms.txt</code>{" "}
 				をブラウザで開き、ページの文章をすべてコピーして、「次の公式資料を読んでから」のあとに貼り付けて送り直してください。
-				英語のページのままで大丈夫です。
+				英語のままで大丈夫です。
 			</p>
 			<p>
 				答えを読んで、この記事の「先に知っておくこと」と食い違うところがあれば、
