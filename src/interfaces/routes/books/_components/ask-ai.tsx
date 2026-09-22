@@ -1,4 +1,4 @@
-import { CodeBlock } from "@cloudensis/design-system/components/ui/code-block";
+import { PromptBlock } from "../../_components/prompt-block";
 
 type AskAiProps = {
 	/** 何のための質問かを示す見出し。 */
@@ -18,7 +18,7 @@ export function AskAi({
 	return (
 		<div class="space-y-2">
 			<p class="font-medium text-sm">{title}</p>
-			<CodeBlock lang="markdown">{children}</CodeBlock>
+			<PromptBlock>{children}</PromptBlock>
 			{note && <p class="text-fg-muted text-sm">{note}</p>}
 		</div>
 	);
