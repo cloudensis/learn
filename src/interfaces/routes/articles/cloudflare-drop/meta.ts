@@ -4,7 +4,7 @@ const meta: Article = {
 	slug: "cloudflare-drop",
 	title: "作ったゲームやWebサイトを公開する：Cloudflare Drop の使い方",
 	description:
-		"HTML・CSS・JavaScript のファイルが入ったフォルダを、Cloudflare Drop でインターネットに公開し、消える前にアカウントで引き取って、ずっと残るURLにするところまでを進めます。",
+		"HTML・CSS・JavaScript のファイルが入ったフォルダを、Cloudflare Drop でインターネットに公開し、ずっと残るURLにするところまでを、公式資料を読ませたAIに聞きながら進めます。",
 	publishedAt: "2026-09-22",
 };
 
