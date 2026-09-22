@@ -128,7 +128,8 @@ https://www.cloudflare.com/drop/llms.txt
 						このフォルダの中身は、すべて誰でも見られるようになります。
 					</strong>
 					ゲームのファイル以外のものや、名前・住所などの個人情報が入っていないかを見ておきます。
-					<code>my-game-backup</code> は公開しません。
+					<code>my-game-backups</code> が <code>my-game</code>{" "}
+					の中に入っていないことも確かめてください。
 				</p>
 				<p>
 					確かめたら、AIの答えに沿って、<code>my-game</code>{" "}
@@ -196,8 +197,7 @@ https://www.cloudflare.com/drop/llms.txt
 					公開し直すやり方の練習です。
 				</p>
 				<p>
-					まず、<code>my-game-backup</code> を取り直してください。
-					そのうえで、新しい会話で次の文を送ります。 丸かっこには、いまの{" "}
+					新しい会話で次の文を送ります。 丸かっこには、いまの{" "}
 					<code>index.html</code> の全文を貼り付けます。
 				</p>
 				<AskAi title="新しい会話で送ってください">
@@ -231,6 +231,10 @@ https://www.cloudflare.com/drop/llms.txt
 					<li>そのURLが、ずっと残る状態になっている</li>
 					<li>公開し直すやり方を知っていて、ロゴを足して公開し直した</li>
 				</ul>
+				<p>
+					ここまで来たら、<code>my-game</code> を <code>my-game-backups</code>{" "}
+					の中にコピーし、名前を <code>ch07</code> にして控えを足しておきます。
+				</p>
 				<p>
 					公開先でロゴが表示されなかった人もいるはずです。
 					手元では表示されていたのに、です。

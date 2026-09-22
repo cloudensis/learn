@@ -97,8 +97,8 @@ export function Template() {
 						（第8章）：動かないとき
 					</li>
 					<li>
-						<strong>my-game-backup</strong>
-						（第5章）：大きく変える前と、うまく動いたとき
+						<strong>my-game-backups</strong>
+						（第5章）：うまく動いたら控えを足し、困ったら戻る
 					</li>
 					<li>
 						<strong>公開し直すやり方</strong>（第7章）：手元で動いたあと
@@ -139,6 +139,10 @@ export function Template() {
 					<li>選んだ機能が、公開先のゲームで動いている</li>
 					<li>その機能を、どう調べて、どう確かめたかを説明できる</li>
 				</ul>
+				<p>
+					ここまで来たら、<code>my-game</code> を <code>my-game-backups</code>{" "}
+					の中にコピーし、名前を <code>ch09</code> にして控えを足しておきます。
+				</p>
 				<p>
 					60分で機能を足しきれなかった場合も、どこまで進んで、どこで止まったかを説明できれば、先へ進んでかまいません。
 					止まった場所が分かっていること自体が、この章で身につけてほしい力です。

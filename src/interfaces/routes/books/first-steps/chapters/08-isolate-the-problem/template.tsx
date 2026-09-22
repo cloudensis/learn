@@ -36,9 +36,6 @@ export function Template() {
 				</p>
 				<ul>
 					<li>
-						<code>my-game-backup</code> を取り直す
-					</li>
-					<li>
 						<code>index.html</code>{" "}
 						の中で、ロゴのファイル名を書いている箇所を、すべて大文字の{" "}
 						<code>LOGO.svg</code> に書き換える
@@ -207,6 +204,10 @@ export function Template() {
 					<li>原因が何だったかを、一言で言える</li>
 					<li>なぜ手元では表示されたのかを、一言で言える</li>
 				</ul>
+				<p>
+					ここまで来たら、<code>my-game</code> を <code>my-game-backups</code>{" "}
+					の中にコピーし、名前を <code>ch08</code> にして控えを足しておきます。
+				</p>
 
 				<Troubleshoot
 					footer={<CommonRulesLink />}
@@ -229,7 +230,7 @@ export function Template() {
 						{
 							symptom: "AIの答えを試しても直らない",
 							action:
-								"第1章の「詰まったときの共通ルール」を使います。my-game-backup から戻し、新しい会話で、切り分けで分かったことを最初から伝え直してください。",
+								"第1章の「詰まったときの共通ルール」を使います。my-game-backups の ch07 から戻し、新しい会話で、切り分けで分かったことを最初から伝え直してください。",
 						},
 					]}
 				/>
