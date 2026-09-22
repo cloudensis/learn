@@ -1,3 +1,5 @@
+import type { Child } from "hono/jsx";
+
 type TroubleshootItem = {
 	/** 起きている症状。 */
 	symptom: string;
@@ -8,12 +10,15 @@ type TroubleshootItem = {
 type TroubleshootProps = {
 	title?: string;
 	items: TroubleshootItem[];
+	/** 一覧の下に添える案内。どれにも当てはまらないときの戻り先などに使う。 */
+	footer?: Child;
 };
 
 /** 章ごとのつまずきと対処をまとめたブロック。 */
 export function Troubleshoot({
 	title = "つまずいたら",
 	items,
+	footer,
 }: TroubleshootProps) {
 	return (
 		<div class="space-y-3 rounded border border-border bg-surface p-4 text-sm">
@@ -26,6 +31,7 @@ export function Troubleshoot({
 					</div>
 				))}
 			</dl>
+			{footer && <p>{footer}</p>}
 		</div>
 	);
 }

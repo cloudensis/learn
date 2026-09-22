@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -50,7 +51,7 @@ export function Template() {
 				<AskAi title="新しい会話で送ってください">
 					{`{{os}}のパソコンで、ブラウザの「開発者ツール」の「コンソール」を開く方法を教えてください。
 
-- 私が使っているブラウザは（Chrome、Edge、Safari など）です
+- 私が使っているブラウザは{{browser}}です
 - キーボードの操作で開く方法と、メニューから開く方法の両方を教えてください
 - コンソールに表示される赤い文字が何を意味するかを、一言で教えてください`}
 				</AskAi>
@@ -82,19 +83,41 @@ export function Template() {
 					に戻して保存し、ゲームが動くことを確かめてください。
 				</p>
 
-				<h2>壊し方2：記号を1つ消す</h2>
+				<h2>壊し方2：プログラムの中の名前を1文字変える</h2>
 				<p>
-					次は、もう少し見つけにくい壊し方です。 エディタで{" "}
-					<code>script.js</code> を開き、どこでもいいので<code>{"}"}</code>
-					（波かっこの閉じ）を1つだけ消して保存してください。
+					次は、ファイルの中身を壊します。 エディタで <code>script.js</code>{" "}
+					を開き、<code>function</code>{" "}
+					という言葉を探してください。エディタの検索機能を使うと早く見つかります。
+					<code>function</code>{" "}
+					のすぐあとに書かれている英字の並びが、ゲームの動きのまとまりに付けられた名前です（たとえば{" "}
+					<code>startGame</code>）。
 				</p>
 				<p>
-					ブラウザを再読み込みすると、ゲームがまた動かなくなります。
+					その名前でもう一度検索すると、同じ名前がほかの場所にも出てきます。
+					そこが、その動きを使っている場所です。
+					<strong>
+						<code>function</code> が前に付いていないほうを1か所だけ
+					</strong>
+					選び、名前の最後の1文字を消して保存してください（
+					<code>startGame</code> なら <code>startGam</code>）。
+					<code>function</code> が見つからないときは、AIに「この script.js
+					の中で、ゲームを始める動きの名前と、それを使っている行を教えてください」と聞いてから進めます。
+				</p>
+				<p>
+					ブラウザを再読み込みして、ゲームを遊んでみてください。
+					書き換えた場所によっては、開いた直後ではなく、ボタンを押したときなどに動かなくなります。
 					コンソールには、今度は別の赤い文字が出ています。 ここでも、
 					<strong>ファイル名と、その横の数字</strong>
 					を探してください。 <code>script.js:42</code> のような形で、
-					<strong>どのファイルの何行目で問題が見つかったか</strong>
+					<strong>どのファイルの何行目で問題が起きたか</strong>
 					が書いてあります。
+					エディタで行番号を見ると、あなたが名前を書き換えた行を指しているはずです。
+				</p>
+				<p>
+					ただし、エラーが指す行が、いつも本当に間違えた場所だとは限りません。
+					かっこの閉じ忘れのような書き間違いでは、ファイルの最後の行を指すこともあります。
+					<strong>行番号は、探しはじめる場所の目印</strong>
+					だと考えてください。
 				</p>
 				<p>
 					ここで、あえて自分では直さずに、AIに相談してみます。
@@ -137,7 +160,7 @@ export function Template() {
 				<ul>
 					<li>
 						やったこと：script.js
-						を少し書き換えた（何を書き換えたかは、あえて伏せておきます）
+						を少し書き換えた（ここでは練習のため、何を書き換えたかは書かずに送ります）
 					</li>
 					<li>期待したこと：これまでどおり、ゲームが遊べる</li>
 					<li>実際に起きたこと：画面は出るが、ゲームが動かない</li>
@@ -145,9 +168,15 @@ export function Template() {
 					<li>関係しそうなファイル：script.js の全文</li>
 				</ul>
 				<p>
-					返ってきた答えに、<strong>消した波かっこの場所</strong>
+					返ってきた答えに、<strong>名前を書き換えた行と、正しい名前</strong>
 					が含まれていれば、相談は成功です。 答えに沿って直すか、
 					<code>my-game-backup</code> の同じファイルと見比べて直してください。
+				</p>
+				<p>
+					この練習では、やったことをわざと伏せて、エラーだけで原因にたどり着けるかを見ました。
+					ふだんの相談では逆です。
+					<strong>やったことは、できるだけ具体的に書いてください。</strong>
+					手がかりが多いほど、AIは早く正確に原因を絞り込めます。
 				</p>
 
 				<h2>確かめる</h2>
@@ -174,6 +203,7 @@ export function Template() {
 				</ul>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "コンソールに赤い文字が出ない",
@@ -203,7 +233,7 @@ export function Template() {
 					items={[
 						"壊す前に、my-game-backup としてコピーを取った",
 						"ファイル名を間違えて、コンソールでファイル名を見つけた",
-						"記号を消して、エラーから行番号を読み取った",
+						"プログラムの中の名前を変えて、エラーから行番号を読み取った",
 						"エラー相談の型を使ってAIに相談し、直ったことを動かして確かめた",
 					]}
 				/>

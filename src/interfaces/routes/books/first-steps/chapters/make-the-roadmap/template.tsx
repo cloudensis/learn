@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -205,6 +206,7 @@ AIツールの機能を使って、ブラウザで遊べるゲームを1つ作�
 				</p>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "返ってきた説明が長すぎて、読み切れない",

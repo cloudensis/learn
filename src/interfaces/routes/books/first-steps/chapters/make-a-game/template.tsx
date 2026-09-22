@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -167,11 +168,12 @@ export function Template() {
 				</ul>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "ゲームが表示されず、文字だけが返ってきた",
 							action:
-								"「いまのゲームを、この画面の中で動かして見せてください」と送ってください。それでも表示されないときは、第1章で確かめた機能の名前を添えて、「〇〇の機能を使って表示してください」と頼みます。",
+								"「いまのゲームを、この画面の中で動かして見せてください」と送ってください。それでも表示されないときは、「作ったものを、この画面の中で動かして見せる機能を使って表示してください」と頼みます。第1章の小さなページが表示できたのと同じツールなら、たいていこれで表示されます。",
 						},
 						{
 							symptom: "ゲームは表示されたが、クリックしても何も起きない",

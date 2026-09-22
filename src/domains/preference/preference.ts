@@ -29,6 +29,17 @@ export const preferences: Record<string, Preference> = {
 		],
 		defaultValue: "windows",
 	},
+	browser: {
+		key: "browser",
+		label: "ブラウザ",
+		options: [
+			{ value: "chrome", label: "Chrome" },
+			{ value: "edge", label: "Edge" },
+			{ value: "safari", label: "Safari" },
+			{ value: "firefox", label: "Firefox" },
+		],
+		defaultValue: "chrome",
+	},
 };
 
 /** 設定値を保存する localStorage のキー。 */

@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -82,7 +83,7 @@ export function Template() {
   - AIに頼んで、HTML・CSS・JavaScript のファイルでブラウザゲームを作り、手元で直せる
   - ブラウザのコンソールでエラーを読み、AIに相談して直せる
   - Cloudflare Workers に、画面の操作だけで公開できる
-- まだできないこと：コマンドを打ち込む操作、Git、サーバ側のプログラム`}
+- まだできないこと：コマンドを打ち込む操作、Git、サーバー側のプログラム`}
 				</AskAi>
 
 				<h2>学ぶ順番を、理由つきで決める</h2>
@@ -161,6 +162,7 @@ export function Template() {
 				</ul>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "作りたいものが決められない",

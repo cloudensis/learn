@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -41,7 +42,7 @@ export function Template() {
 				<p>
 					自分で思いついた機能でもかまいません。
 					ただし、「ランキング」や「ほかの人と対戦」のように、ほかの人とデータをやり取りする機能は、この本では作れません。
-					ゲームをサーバという別のコンピュータとつなぐ必要があるからです。
+					ゲームをサーバーという別のコンピュータとつなぐ必要があるからです。
 				</p>
 
 				<h2>作り方の選択肢を聞く</h2>
@@ -138,6 +139,7 @@ export function Template() {
 				</p>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "AIが、変更した部分だけを出してきた",
