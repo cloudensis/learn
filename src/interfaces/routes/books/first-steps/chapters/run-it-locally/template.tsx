@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -85,6 +86,12 @@ export function Template() {
 					行います。
 					検索結果の広告などから入れると、関係のないソフトが入ることがあります。
 				</p>
+				<p>
+					AIが添えたURLも、そのまま信じずに確かめます。
+					URLを開いたら、そのページがエディタを作っている会社や団体のものか（ページの下のほうに名前が書かれていることが多いです）を見てください。
+					あわせて、エディタの名前で検索し、「広告」や「スポンサー」と表示されていない結果のアドレスと、AIが示したアドレスが同じかを見比べます。
+					食い違っていたら、検索結果のほうから入手してください。
+				</p>
 
 				<h2>ゲームを入れるフォルダを作る</h2>
 				<p>
@@ -141,9 +148,26 @@ export function Template() {
 				<p>
 					もうひとつ、<strong>本当に3つのファイルで動いているか</strong>
 					も確かめておきます。 エディタで <code>style.css</code>{" "}
-					を開き、色を表している部分を1か所だけ別の色に書き換えて保存してください。
+					を開き、色を表している部分（<code>#ff6600</code> や <code>red</code>{" "}
+					のように書かれているところ）を1か所だけ別の色に書き換えて保存してください。
 					ブラウザを再読み込みして色が変われば、index.html が style.css
 					をちゃんと読み込めています。 確かめたら、元の色に戻しておきます。
+				</p>
+				<p>
+					script.js も確かめます。 エディタで <code>script.js</code>{" "}
+					の名前を、いったん <code>script-off.js</code> に変えてください。
+					ブラウザを再読み込みして、見た目は出るのにゲームが動かなくなれば、ゲームの動きは
+					script.js から読み込まれています。 確かめたら、名前を{" "}
+					<code>script.js</code> に戻し、ゲームがまた動くことを見ておきます。
+				</p>
+				<p>
+					名前を変えても<strong>ゲームが動いたままなら</strong>
+					、動きがまだ index.html の中に残っています。
+					その場合は、ゲームを作った会話の続きで「index.html の中に残っている
+					JavaScript を、すべて script.js に移してください。変更後の index.html
+					と script.js
+					を全文で出してください」と頼み、もう一度確かめてください。
+					次の第5章は、動きが script.js に分かれていることを前提に進みます。
 				</p>
 				<p>
 					このように、
@@ -162,9 +186,13 @@ export function Template() {
 						をブラウザで開くと、第2章と同じゲームが遊べる
 					</li>
 					<li>style.css を書き換えると、見た目が変わることを確かめた</li>
+					<li>
+						script.js の名前を変えると、ゲームが動かなくなることを確かめた
+					</li>
 				</ul>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom:
@@ -195,7 +223,7 @@ export function Template() {
 						"型3で、コードエディタの選択肢と選び方を聞いて、1つ決めた",
 						"エディタを公式サイトから入手して入れた",
 						"my-game フォルダに、index.html・style.css・script.js を作った",
-						"ブラウザでゲームが遊べることと、style.css の変更が反映されることを確かめた",
+						"ブラウザでゲームが遊べることと、style.css と script.js が読み込まれていることを確かめた",
 					]}
 				/>
 

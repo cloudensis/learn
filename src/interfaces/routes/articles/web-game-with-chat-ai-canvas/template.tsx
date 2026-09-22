@@ -1,4 +1,6 @@
-import { CodeBlock } from "@cloudensis/design-system/components/ui/code-block";
+import { totalMinutes } from "#/src/domains/book/book";
+import { PromptBlock } from "../../_components/prompt-block";
+import book from "../../books/first-steps/meta";
 import meta from "./meta";
 
 export function Template() {
@@ -48,7 +50,7 @@ export function Template() {
 				見た目の好みがあれば、最後の一行だけ書き換えてもかまいません。
 			</p>
 
-			<CodeBlock lang="markdown">
+			<PromptBlock>
 				{`# 作ってほしいもの
 ブラウザで遊べる「もぐらたたき」ゲームを作ってください。1ページに収まる簡単なもので大丈夫です。
 
@@ -64,7 +66,7 @@ export function Template() {
 
 # その他
 - 追加のインストールが必要な仕組みは使わず、そのまま遊べる形で作ってください`}
-			</CodeBlock>
+			</PromptBlock>
 
 			<p>
 				しばらく待つと、会話の横にゲームが表示されます。実際に遊んでみてください。
@@ -87,10 +89,10 @@ export function Template() {
 				ことです。
 			</p>
 
-			<CodeBlock lang="markdown">
+			<PromptBlock>
 				{`もぐらが顔を出している時間が短すぎて、ほとんどタップできません。
 出ている時間を少し長くして、簡単すぎない程度に調整してください。`}
-			</CodeBlock>
+			</PromptBlock>
 
 			<p>
 				ゲームの面白さは、この調整で決まります。
@@ -98,19 +100,19 @@ export function Template() {
 				気づいたことを伝えるたびに手応えが変わっていくので、ここがいちばん楽しい工程かもしれません。
 			</p>
 
-			<CodeBlock lang="markdown">
+			<PromptBlock>
 				{`もぐらをタップしたときに手応えがありません。
 叩いたもぐらが一瞬だけ色や表情を変えるようにして、得点が入ったことが分かるようにしてください。`}
-			</CodeBlock>
+			</PromptBlock>
 
 			<p>
 				直した結果、別の場所が崩れることもあります。そのときは戻したい状態をはっきり伝えます。
 			</p>
 
-			<CodeBlock lang="markdown">
+			<PromptBlock>
 				{`さきほどの修正で、得点の表示が盤面に重なってしまいました。
 もぐらの出る速さはそのままにして、得点の表示位置だけを元に戻してください。`}
-			</CodeBlock>
+			</PromptBlock>
 
 			<h2>共有リンクを発行する</h2>
 			<p>
@@ -124,13 +126,13 @@ export function Template() {
 				<strong>そのAI自身に聞くのがいちばん早い方法</strong>です。
 			</p>
 
-			<CodeBlock lang="markdown">
+			<PromptBlock>
 				{`いま作ってもらったゲームを、リンクで人に共有したいです。
 
 - この画面のどこから共有できますか
 - 共有リンクを開いた人には、何が見えますか。私とのやりとりも一緒に見えますか
 - 公開の範囲を選べる場合は、どの選択肢があるか教えてください`}
-			</CodeBlock>
+			</PromptBlock>
 
 			<p>
 				共有するときに気をつけたいのは、
@@ -214,21 +216,17 @@ export function Template() {
 
 			<h2>次の一歩</h2>
 			<p>
-				「自分で管理できる場所に公開したい」「ランキングのような仕組みも作れるようになりたい」と思われた方は、
-				<a href="/books/first-web-app-with-ai">
-					AIとつくる、はじめてのWebアプリ公開
-				</a>
+				「自分で管理できる場所に公開したい」「動かなくなったときに、自分で原因を探して直せるようになりたい」と思われた方は、
+				<a href={`/books/${book.slug}`}>{book.title}</a>
 				へ進んでみてください。
 			</p>
 			<p>
-				この記事と同じようにAIに作ってもらうところから始めて、
-				それを自分で借りたサーバーに置いて公開し、
-				URLを開いたときに何が起きているのかを、自分の目で確かめていく本です。
-				置き場所を自分で持てるので、サーバー側の処理を足したり、あとから独自のドメインを付けたりもできるようになります。
-				全7章、目安7時間、費用はかかりません。プログラミングの経験も不要です。
+				この記事と同じもぐらたたきから始めて、ゲームを自分のパソコンのファイルにし、インターネットに公開し、壊れたときに自分で切り分けて直せるようになるまでの本です。
+				ランキングのように、ほかの人とデータをやり取りする仕組みはこの本でも作りませんが、最後の章で、それを作るために次に何を学ぶかを自分で決めます。
+				全{book.chapters.length}章、目安 約{Math.round(totalMinutes(book) / 60)}
+				時間、費用はかかりません。プログラミングの経験も不要です。
 			</p>
 			<p>
-				この記事で作ったゲームを、そのまま題材にして進めることもできます。
 				まずは共有リンクを友達に送って、得点を競うところから始めてみてください。
 			</p>
 		</article>

@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -30,7 +31,7 @@ export function Template() {
 				<AskAi title="新しい会話で送ってください">
 					{`ブラウザでWebページが表示されるまでの全体像を教えてください。
 
-- 登場するもの（ブラウザ、サーバ、URLなど）を先に一覧にして、それぞれの役割を一言で説明してください
+- 登場するもの（ブラウザ、サーバー、URLなど）を先に一覧にして、それぞれの役割を一言で説明してください
 - そのあと、URLを入力してからページが表示されるまでを、順番に説明してください
 - 自分のパソコンの index.html をダブルクリックで開いたときと、インターネット上のページを開いたときの違いも教えてください
 - 私はプログラミングの知識がまったくありません。専門用語には短い説明を付けて、全体で600字くらいに収めてください`}
@@ -39,10 +40,10 @@ export function Template() {
 					ここで押さえておきたいのは、1点だけです。
 					インターネットでページを開くとき、ブラウザは
 					<strong>
-						サーバと呼ばれる別のコンピュータに、ファイルを取りに行っています
+						サーバーと呼ばれる別のコンピュータに、ファイルを取りに行っています
 					</strong>
 					。 公開するというのは、あなたの <code>my-game</code>{" "}
-					フォルダのファイルを、そのサーバに置いてもらうことです。
+					フォルダのファイルを、そのサーバーに置いてもらうことです。
 				</p>
 
 				<h2>公開先を決める</h2>
@@ -223,6 +224,7 @@ https://www.cloudflare.com/drop/
 				</p>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "AIに公式資料のURLを渡したが、読めないと言われた",

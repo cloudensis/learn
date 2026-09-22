@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
 
@@ -54,17 +55,16 @@ export function Template() {
 					<li>
 						ハイスコアの記録：いちばん良かった得点を、ページを閉じても覚えておく
 					</li>
-					<li>全画面表示：ボタンを押すと、ゲームが画面いっぱいに広がる</li>
-					<li>
-						振動：スマートフォンで遊んだとき、得点が入ったら端末を短く震わせる
-					</li>
 					<li>
 						暗い画面への対応：端末が暗い配色の設定のとき、ゲームの配色も暗くなる
 					</li>
-					<li>結果の共有：終わったときの得点を、ほかのアプリに送れるボタン</li>
+					<li>
+						一時停止：ボタンを押すとゲームが止まり、もう一度押すと続きから遊べる
+					</li>
 				</ul>
 				<p>
-					どれも、ブラウザが最初から持っている機能を使えば作れます。
+					どれも、HTML・CSS・JavaScript
+					と、ブラウザが最初から持っている機能だけで作れます。
 					ただし、どの機能を使えばいいかは、この本には書きません。
 				</p>
 
@@ -113,7 +113,9 @@ export function Template() {
 						MDN Web Docs
 					</a>
 					という資料が、公式資料として広く使われています。
+					ブラウザを作っている会社も協力して整えている資料で、ページごとに、その機能がどのブラウザで使えるかの一覧も載っています。
 					公式資料を参照させる型で、ここを読ませてみてください。
+					自分で機能を選んだときは、使いたいブラウザやスマートフォンで動くかも、この一覧で先に確かめておくと安心です。
 				</p>
 
 				<h2>確かめる</h2>
@@ -140,6 +142,7 @@ export function Template() {
 				</p>
 
 				<Troubleshoot
+					footer={<CommonRulesLink />}
 					items={[
 						{
 							symptom: "何から手をつければいいか分からない",
