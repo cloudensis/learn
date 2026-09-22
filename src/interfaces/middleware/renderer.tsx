@@ -57,10 +57,7 @@ export const renderer = jsxRenderer(
 				<body class="flex min-h-svh flex-col">
 					<Header title={site.name} />
 					<main class="flex-1">{children}</main>
-					<Footer
-						copyrightHolder={site.name}
-						links={[]}
-					/>
+					<Footer copyrightHolder={site.name} links={[]} />
 				</body>
 			</html>
 		);
