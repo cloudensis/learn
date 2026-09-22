@@ -2,7 +2,7 @@ import type { BookChapter } from "#/src/domains/book/book";
 
 const meta: BookChapter = {
 	slug: "isolate-the-problem",
-	number: 7,
+	number: 8,
 	title: "動かないときに切り分ける",
 	description:
 		"手元では動くのに、公開先では動かない。この本が用意したその不具合を、手順に沿って切り分けて直します。",

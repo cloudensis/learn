@@ -2,7 +2,7 @@ import type { BookChapter } from "#/src/domains/book/book";
 
 const meta: BookChapter = {
 	slug: "break-and-fix",
-	number: 4,
+	number: 5,
 	title: "わざと壊して、直す",
 	description:
 		"自分のゲームをわざと壊し、エラーを手がかりに直します。詰まったときにAIへ相談するための型を、ここで初めて使います。",

@@ -2,7 +2,7 @@ import type { BookChapter } from "#/src/domains/book/book";
 
 const meta: BookChapter = {
 	slug: "make-a-game",
-	number: 1,
+	number: 2,
 	title: "AIでゲームを作ってみる",
 	description:
 		"AIツールの機能だけで、ブラウザで遊べるゲームを1つ作ります。遊んだあとで、それだけでは何が足りないかを自分で挙げます。",
