@@ -93,6 +93,17 @@ export function Template() {
 					あわせて、エディタの名前で検索し、「広告」や「スポンサー」と表示されていない結果のアドレスと、AIが示したアドレスが同じかを見比べます。
 					食い違っていたら、検索結果のほうから入手してください。
 				</p>
+				<p>
+					Visual Studio Code を選んだ人で、入れ方や最初の設定で迷ったら、
+					<a
+						href="/articles/code-editor"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						コードを書く道具をそろえる：Visual Studio Code の準備
+					</a>
+					を見ながら進めてください。
+				</p>
 
 				<h2>ゲームを入れるフォルダを作る</h2>
 				<p>
