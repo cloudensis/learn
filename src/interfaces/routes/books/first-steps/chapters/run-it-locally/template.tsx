@@ -23,7 +23,11 @@ export function Template() {
 				</p>
 				<p>
 					パソコンのファイルやフォルダの扱いに自信がない人は、先に
-					<a href="/articles/files-and-folders">
+					<a
+						href="/articles/files-and-folders"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						ダウンロードに置きっぱなしを卒業する：ファイルとフォルダの基本
 					</a>
 					を読んでおいてください。

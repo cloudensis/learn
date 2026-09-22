@@ -105,7 +105,11 @@ export function Template() {
 				</ul>
 				<p>
 					ブラウザが持っている機能については、
-					<a href="https://developer.mozilla.org/ja/" rel="noopener">
+					<a
+						href="https://developer.mozilla.org/ja/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						MDN Web Docs
 					</a>
 					という資料が、公式資料として広く使われています。

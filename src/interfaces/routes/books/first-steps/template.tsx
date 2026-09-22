@@ -54,7 +54,12 @@ export function Template() {
 					</li>
 					<li>
 						パソコンのファイルやフォルダの扱いに自信がない人は、先に
-						<a href="/articles/files-and-folders" class="underline">
+						<a
+							href="/articles/files-and-folders"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="underline"
+						>
 							ダウンロードに置きっぱなしを卒業する：ファイルとフォルダの基本
 						</a>
 						を読んでおくと安心です

@@ -69,7 +69,11 @@ export function Template() {
 				</ul>
 				<p>
 					パソコンのファイルやフォルダの扱いに自信がない人は、先に
-					<a href="/articles/files-and-folders">
+					<a
+						href="/articles/files-and-folders"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						ダウンロードに置きっぱなしを卒業する：ファイルとフォルダの基本
 					</a>
 					を読んでおくと、第4章から先が楽になります。
