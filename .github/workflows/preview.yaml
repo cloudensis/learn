@@ -2,23 +2,12 @@ name: Preview
 
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: "プレビュー環境にデプロイするブランチ"
-        required: true
-        type: string
-
-concurrency:
-  group: preview-${{ inputs.branch }}
-  cancel-in-progress: true
 
 jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-        with:
-          ref: ${{ inputs.branch }}
 
       - uses: actions/setup-node@v7
         with:
@@ -29,40 +18,8 @@ jobs:
 
       - run: npm run build
 
-      # ブランチ名を preview alias に使える形式 (英小文字・数字・ハイフン、英字始まり) に変換する
-      - id: alias
-        env:
-          BRANCH: ${{ inputs.branch }}
-        run: |
-          alias=$(printf '%s' "$BRANCH" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
-          if ! printf '%s' "$alias" | grep -qE '^[a-z]'; then
-            alias="b-${alias}"
-          fi
-          alias=$(printf '%s' "${alias:0:50}" | sed -E 's/-+$//')
-          echo "value=${alias}" >> "$GITHUB_OUTPUT"
-          echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
-
-      - id: upload
-        uses: cloudflare/wrangler-action@v4
+      - uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: versions upload --preview-alias ${{ steps.alias.outputs.value }} --message "Preview ${{ steps.alias.outputs.value }}@${{ steps.alias.outputs.sha }}"
-
-      - env:
-          BRANCH: ${{ inputs.branch }}
-          ALIAS: ${{ steps.alias.outputs.value }}
-          SHA: ${{ steps.alias.outputs.sha }}
-          OUTPUT: ${{ steps.upload.outputs.command-output }}
-        run: |
-          {
-            echo "## Preview deployment"
-            echo ""
-            echo "- Branch: \`${BRANCH}\`"
-            echo "- Commit: \`${SHA}\`"
-            echo "- Preview alias: \`${ALIAS}\`"
-            echo ""
-            echo '```'
-            echo "$OUTPUT"
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+          command: versions upload
