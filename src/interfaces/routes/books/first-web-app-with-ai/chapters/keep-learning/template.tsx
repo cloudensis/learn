@@ -114,7 +114,7 @@ export function Template() {
 				<ul>
 					<li>
 						<strong>型1・全体像を聞く</strong>
-						：迷子になったとき、最初に地図をもらう
+						：迷子になったとき、最初にロードマップをもらう
 					</li>
 					<li>
 						<strong>型2・部分を聞く</strong>
