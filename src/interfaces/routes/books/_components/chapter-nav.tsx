@@ -3,13 +3,14 @@ import {
 	type BookChapter,
 	chapterLabel,
 } from "#/src/domains/book/book";
+import { HomeLink } from "../../_components/home-link";
 
 type ChapterNavProps = {
 	book: Book;
 	chapter: BookChapter;
 };
 
-/** 章の本文下に置く、前後の章と目次へのリンク。 */
+/** 章の本文下に置く、前後の章・目次・ホームへのリンク。 */
 export function ChapterNav({ book, chapter }: ChapterNavProps) {
 	const index = book.chapters.findIndex((item) => item.slug === chapter.slug);
 	const previous = index > 0 ? book.chapters[index - 1] : undefined;
@@ -45,6 +46,7 @@ export function ChapterNav({ book, chapter }: ChapterNavProps) {
 					目次へ戻る
 				</a>
 			</p>
+			<HomeLink />
 		</nav>
 	);
 }
