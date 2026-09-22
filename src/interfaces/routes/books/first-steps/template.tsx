@@ -55,7 +55,7 @@ export function Template() {
 					<li>
 						パソコンのファイルやフォルダの扱いに自信がない人は、先に
 						<a href="/articles/files-and-folders" class="underline">
-							ファイルとフォルダの基本を、AIに聞きながら身につける
+							ダウンロードに置きっぱなしを卒業する：ファイルとフォルダの基本
 						</a>
 						を読んでおくと安心です
 					</li>
