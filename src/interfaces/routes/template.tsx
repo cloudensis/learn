@@ -6,7 +6,6 @@ import { BookList } from "./_components/book-list";
 import { articles } from "./articles/registry";
 import { books } from "./books/registry";
 
-/** この教材を読み終えたときに、できるようになっていること。 */
 const goals = [
 	{
 		title: "次に何を学ぶかを、自分で決められる",
@@ -25,7 +24,6 @@ const goals = [
 	},
 ] as const;
 
-/** 教材を進めるうえでの、読者との約束ごと。 */
 const policies = [
 	{
 		title: "AIと一緒に進めます",
@@ -54,7 +52,6 @@ const policies = [
 	},
 ] as const;
 
-/** 全編でくり返し使う、AIへの質問の型。 */
 const questionTypes = [
 	{
 		name: "型1・全体像を聞く",
