@@ -135,7 +135,8 @@ export function Template() {
 - style.css：見た目
 - script.js：ゲームの動き
 
-3つのファイルは同じフォルダに置きます。
+3つのファイルは同じフォルダに置き、index.html をダブルクリックして開いても動くようにしたいです。
+script.js は、type="module" を付けずに読み込んでください。
 ゲームの内容や見た目は、いまのまま変えないでください。`}
 				</AskAi>
 				<p>
