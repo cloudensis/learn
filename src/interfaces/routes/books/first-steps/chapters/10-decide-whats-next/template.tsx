@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -71,7 +72,8 @@ export function Template() {
 					で行います。 調べものでロードマップ用チャットを散らかさないためです。
 				</p>
 				<p>
-					使うのは、第3章で使った<strong>型1・全体像を聞く</strong>
+					使うのは、
+					<AskStyleLink style={askStyles.bigPicture} />
 					です。 あなたの前提として、この本でできるようになったことを添えます。
 				</p>
 				<AskAi title="新しい会話で送ってください">
@@ -89,7 +91,7 @@ export function Template() {
 				<h2>学ぶ順番を、理由つきで決める</h2>
 				<p>
 					必要な知識が並んだら、どの順番で学ぶかを決めます。 ここで使うのは、
-					<strong>型3・理由を聞く</strong>
+					<AskStyleLink style={askStyles.howToChoose} />
 					です。 順番そのものより、<strong>なぜその順番なのか</strong>
 					を手に入れることが大切です。
 					理由が分かっていれば、途中で状況が変わっても、自分で順番を組み替えられます。
@@ -106,8 +108,9 @@ export function Template() {
 					答えを読んで、自分で順番を決めてください。
 					すすめられた案をそのまま選んでもかまいません。 ただし、
 					<strong>それぞれの順番の理由を、自分の言葉で言えるか</strong>
-					を確かめながら選びます。
-					言えないものがあれば、型2でその部分だけ聞いてください。
+					を確かめながら選びます。 言えないものがあれば、
+					<AskStyleLink style={askStyles.onePoint} />
+					でその部分だけ聞いてください。
 				</p>
 
 				<h2>ロードマップ用チャットに書き出す</h2>
@@ -137,7 +140,7 @@ export function Template() {
 					そこで、<strong>最初の一歩を、30分だけやってみてください。</strong>
 				</p>
 				<p>
-					ロードマップ用チャットが返してくれた「最初にやること」について、新しい会話で型1を使って全体像を聞き、手を動かしてみます。
+					ロードマップ用チャットが返してくれた「最初にやること」について、新しい会話で「全体像を聞く」を使って聞いてから、手を動かしてみます。
 					30分やってみて、次のどちらかを判断します。
 				</p>
 				<ul>
@@ -186,7 +189,7 @@ export function Template() {
 					items={[
 						"ロードマップ用チャットで、ここまでを振り返った",
 						"この本のあとに作りたいものを1つ決めた",
-						"型1で必要な知識を洗い出し、型3で順番と理由を決めた",
+						"「全体像を聞く」で必要な知識を洗い出し、「選び方を聞く」で順番と理由を決めた",
 						"決めた内容を、ロードマップ用チャットに書き出した",
 						"最初の一歩を30分試して、順番を確かめた",
 					]}
@@ -200,7 +203,7 @@ export function Template() {
 				</p>
 				<p>
 					そして、もっと大事なものが手元に残っています。
-					分からないことは型を使ってAIに聞き、答えは動かして、公式資料で確かめる。
+					分からないことは決まった聞き方でAIに聞き、答えは動かして、公式資料で確かめる。
 					動かなければ、切り分けて相談する。
 					次に何をするかは、作りたいものから逆算して決める。
 					このやり方は、この先どんな技術を学ぶときにも、そのまま使えます。

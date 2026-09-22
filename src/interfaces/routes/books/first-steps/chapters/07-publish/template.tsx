@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -26,7 +27,9 @@ export function Template() {
 				<h2>ページが表示されるまでを知る</h2>
 				<p>
 					公開の前に、いまブラウザでゲームを開いているときと、インターネットでページを開くときで、何が違うのかを押さえておきます。
-					ここでは、第3章で使った型1・全体像を聞くを使います。
+					ここでは、
+					<AskStyleLink style={askStyles.bigPicture} />
+					を使います。
 				</p>
 				<AskAi title="新しい会話で送ってください">
 					{`ブラウザでWebページが表示されるまでの全体像を教えてください。
@@ -49,7 +52,9 @@ export function Template() {
 				<h2>公開先を決める</h2>
 				<p>
 					ファイルを置いてもらえるサービスは、たくさんあります。
-					どんな選択肢があるのかを、型3で聞いてみてください。
+					どんな選択肢があるのかを、
+					<AskStyleLink style={askStyles.howToChoose} />
+					で聞いてみてください。
 				</p>
 				<AskAi title="同じ会話の続きで送ってください">
 					{`HTML・CSS・JavaScript のファイルだけでできたゲームを、インターネットに公開する先で迷っています。
@@ -78,18 +83,18 @@ export function Template() {
 					この本を終えてから、ほかの公開先を試してみてください。
 				</p>
 
-				<h2>公式資料をAIに読ませる</h2>
+				<h2 id="ask-with-official-docs">公式資料をAIに読ませる</h2>
 				<p>
 					公開のしかたは、サービスの画面が変わるたびに変わります。
 					AIがよく知っていることでも、答えが古くなっていることがあります。
 				</p>
 				<p>
 					そこで、ここで新しい聞き方を使います。
-					<strong>公式資料を参照させる型</strong>
+					<strong>公式資料を読ませる</strong>
 					です。
 					質問の前に、そのサービスを作っている本人が出している資料の場所をAIに渡し、それを読んでから答えてもらいます。
 				</p>
-				<AskAi title="公式資料を参照させる型">
+				<AskAi title="公式資料を読ませる">
 					{`次の公式資料を読んでから、質問に答えてください。
 （公式資料のURL）
 
@@ -164,7 +169,7 @@ https://www.cloudflare.com/drop/
 				<p>
 					ゲームを直したら、公開しているほうも新しくする必要があります。
 					手元のファイルを直しただけでは、公開先は古いままです。
-					やり方を、公式資料を参照させる型で聞いておきましょう。
+					やり方を、「公式資料を読ませる」で聞いておきましょう。
 				</p>
 				<AskAi title="公式資料を読ませた会話の続きで送ってください">
 					{`さきほどの方法で公開したゲームを、手元で直しました。
@@ -252,8 +257,8 @@ https://www.cloudflare.com/drop/
 
 				<Checklist
 					items={[
-						"型1で、ページが表示されるまでの全体像を聞いた",
-						"公式資料を参照させる型を使って、公開のしかたを聞いた",
+						"「全体像を聞く」で、ページが表示されるまでの全体像を聞いた",
+						"「公式資料を読ませる」を使って、公開のしかたを聞いた",
 						"ゲームを公開し、シークレットウィンドウとスマートフォンで遊べることを確かめた",
 						"公式資料を自分で開いて、AIの答えを確かめた",
 						"ロゴを足して、公開し直した",

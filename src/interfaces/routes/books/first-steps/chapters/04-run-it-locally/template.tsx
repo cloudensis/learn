@@ -3,6 +3,7 @@ import { ChapterHeader } from "../../../_components/chapter-header";
 import { ChapterNav } from "../../../_components/chapter-nav";
 import { Checklist } from "../../../_components/checklist";
 import { Troubleshoot } from "../../../_components/troubleshoot";
+import { AskStyleLink, askStyles } from "../../_components/ask-styles";
 import { CommonRulesLink } from "../../_components/common-rules-link";
 import book from "../../meta";
 import meta from "./meta";
@@ -34,7 +35,7 @@ export function Template() {
 					を読んでおいてください。
 				</p>
 
-				<h2>コードを書くための道具を選ぶ</h2>
+				<h2 id="ask-how-to-choose">コードを書くための道具を選ぶ</h2>
 				<p>
 					ゲームの中身は、HTML・CSS・JavaScript
 					という言葉で書かれた文字の集まりです。
@@ -45,11 +46,11 @@ export function Template() {
 				</p>
 				<p>
 					なぜおすすめしないのか、そしてどれを選べばいいのかを、AIに聞いてみましょう。
-					ここで使うのが、<strong>型3・理由を聞く</strong>
+					ここで使うのが、<strong>選び方を聞く</strong>
 					です。
 					答えそのものではなく、選択肢と、選ぶときの基準を手に入れるための聞き方です。
 				</p>
-				<AskAi title="型3・理由を聞く">
+				<AskAi title="選び方を聞く">
 					{`（決めたいこと）で迷っています。
 
 - 選択肢を3つまで挙げて、それぞれの特徴を一言で説明してください
@@ -102,7 +103,7 @@ export function Template() {
 					この本では、フォルダやファイルの名前に
 					<strong>半角の英小文字・数字・ハイフンだけ</strong>
 					を使います。 空白や日本語、大文字は使いません。
-					理由が気になったら、型3で聞いてみてください。
+					理由が気になったら、「一点だけ聞く」で聞いてみてください。
 					いまは、決まりとして守っておいてもらえれば十分です。
 				</p>
 
@@ -129,7 +130,9 @@ export function Template() {
 				<p>
 					返ってきたら、エディタで <code>my-game</code>{" "}
 					フォルダを開き、3つのファイルを作って、それぞれの中身を貼り付けて保存します。
-					エディタでのフォルダの開き方やファイルの作り方が分からなければ、エディタの名前を添えて、型2で聞いてください。
+					エディタでのフォルダの開き方やファイルの作り方が分からなければ、エディタの名前を添えて、
+					<AskStyleLink style={askStyles.onePoint} />
+					で聞いてください。
 				</p>
 				<p>
 					ファイル名は、<code>index.html</code>・<code>style.css</code>・
@@ -220,7 +223,7 @@ export function Template() {
 
 				<Checklist
 					items={[
-						"型3で、コードエディタの選択肢と選び方を聞いて、1つ決めた",
+						"「選び方を聞く」で、コードエディタの選択肢と選び方を聞いて、1つ決めた",
 						"エディタを公式サイトから入手して入れた",
 						"my-game フォルダに、index.html・style.css・script.js を作った",
 						"ブラウザでゲームが遊べることと、style.css と script.js が読み込まれていることを確かめた",
