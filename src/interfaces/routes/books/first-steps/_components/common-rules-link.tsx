@@ -4,7 +4,7 @@ export function CommonRulesLink() {
 		<>
 			どれにも当てはまらないとき、同じところで何度も止まるときは、
 			<a
-				href="/books/first-steps/how-to-use-this-book#when-stuck"
+				href="/books/first-steps/01-how-to-use-this-book#when-stuck"
 				class="underline"
 			>
 				第1章の「詰まったときの共通ルール」
