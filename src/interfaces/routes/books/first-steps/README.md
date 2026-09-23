@@ -187,7 +187,7 @@
 
 | article | パス | 案内する章 |
 | ------- | ---- | ---------- |
-| ファイルとフォルダの基本 | `/articles/files-and-folders` | 第1章、第4章 |
+| ファイルとフォルダの基本 | `/articles/files-and-folders` | 第1章、第4章（本で使う 1・2・4 だけを案内する） |
 | Visual Studio Code の準備 | `/articles/code-editor` | 第4章 |
 | Cloudflare Drop の使い方 | `/articles/cloudflare-drop` | 第7章 |
 
