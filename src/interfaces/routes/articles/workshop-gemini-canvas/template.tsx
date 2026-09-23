@@ -1,4 +1,7 @@
 import { PromptBlock } from "../../_components/prompt-block";
+import geminiCompleteImg from "./_assets/gemini-complate.png";
+import geminiLoggedInImg from "./_assets/gemini-logged-in.png";
+import geminiShareImg from "./_assets/gemini-share.png";
 import meta from "./meta";
 
 const steps = [
@@ -98,7 +101,10 @@ export function Template() {
 				</p>
 
 				<p>
-					<img src="" alt="Geminiにログインした状態画面キャプチャ" />
+					<img
+						src={geminiLoggedInImg}
+						alt="Geminiにログインした状態画面キャプチャ"
+					/>
 				</p>
 
 				<h3>注意点</h3>
@@ -121,7 +127,10 @@ export function Template() {
 				</PromptBlock>
 				<p>しばらく待つと、画面にゲームが表示されます。</p>
 				<p>
-					<img src="" alt="Gemini Canvasでゲームが完成した状態画面キャプチャ" />
+					<img
+						src={geminiCompleteImg}
+						alt="Gemini Canvasでゲームが完成した状態画面キャプチャ"
+					/>
 				</p>
 
 				<h3>遊びながら直す</h3>
@@ -171,7 +180,7 @@ export function Template() {
 				</p>
 
 				<p>
-					<img src="" alt="Geminiの共有画面キャプチャ" />
+					<img src={geminiShareImg} alt="Geminiの共有画面キャプチャ" />
 				</p>
 
 				<p>
