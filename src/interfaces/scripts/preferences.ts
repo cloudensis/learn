@@ -37,13 +37,14 @@ function apply(key: string, value: string) {
 	for (const radio of radios) {
 		radio.checked = radio.value === value;
 	}
-	for (const element of document.querySelectorAll<HTMLElement>(
-		"[data-preference-value]",
-	)) {
-		if (element.dataset.preferenceValue === key) {
-			element.textContent = selected.dataset.preferenceLabel ?? "";
-		}
-	}
+
+	document
+		.querySelectorAll<HTMLElement>("[data-preference-value]")
+		.forEach((element) => {
+			if (element.dataset.preferenceValue === key) {
+				element.textContent = selected.dataset.preferenceLabel ?? "";
+			}
+		});
 }
 
 const keys = new Set(
