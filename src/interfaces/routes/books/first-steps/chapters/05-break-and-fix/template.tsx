@@ -81,6 +81,15 @@ export function Template() {
 					「このファイルが見つからない」という意味のことが書かれています。
 				</p>
 				<p>
+					書き換えても<strong>ゲームが動いたままなら</strong>
+					、ゲームの動きがまだ index.html の中に残っています。
+					第2章でゲームを作った会話の続きで「index.html の中に残っている
+					JavaScript を、すべて script.js に移してください。変更後の index.html
+					と script.js
+					を全文で出してください」と頼み、返ってきた全文で2つのファイルを上書きしてから、もう一度書き換えてみてください。
+					この章の残りは、動きが script.js に分かれていることを前提に進みます。
+				</p>
+				<p>
 					確かめたら、<code>scripts.js</code> を <code>script.js</code>{" "}
 					に戻して保存し、ゲームが動くことを確かめてください。
 				</p>
