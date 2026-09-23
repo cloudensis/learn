@@ -2,7 +2,7 @@ import { Footer } from "@cloudensis/design-system/components/layout/footer";
 import { Header } from "@cloudensis/design-system/components/layout/header";
 import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
 import { Link, Script, ViteClient } from "vite-ssr-components/hono";
-import { site } from "#/src/domains/company/constants";
+import { company, site } from "#/src/domains/company/constants";
 
 declare module "hono" {
 	interface ContextRenderer {
@@ -13,7 +13,6 @@ declare module "hono" {
 				title?: string;
 				description?: string;
 				ogImage?: string;
-				/** true にすると検索エンジンにインデックスさせない。 */
 				noindex?: boolean;
 			},
 		): Response;
@@ -60,7 +59,7 @@ export const renderer = jsxRenderer(
 				<body class="flex min-h-svh flex-col">
 					<Header title={site.name} />
 					<main class="flex-1">{children}</main>
-					<Footer copyrightHolder={site.name} links={[]} />
+					<Footer copyrightHolder={company.name} links={[]} />
 				</body>
 			</html>
 		);

@@ -1,3 +1,7 @@
+export const company = {
+	name: "Cloudensis合同会社",
+} as const;
+
 export const site = {
 	name: "cloudensis learn",
 	url: "https://learn.cloudensis.com",
