@@ -13,13 +13,15 @@ declare module "hono" {
 				title?: string;
 				description?: string;
 				ogImage?: string;
+				/** true にすると検索エンジンにインデックスさせない。 */
+				noindex?: boolean;
 			},
 		): Response;
 	}
 }
 
 export const renderer = jsxRenderer(
-	({ children, title, description, ogImage }) => {
+	({ children, title, description, ogImage, noindex }) => {
 		const c = useRequestContext();
 		const canonicalUrl = new URL(c.req.path, site.url).toString();
 		const pageTitle = title ?? site.name;
@@ -37,6 +39,7 @@ export const renderer = jsxRenderer(
 					<title>{pageTitle}</title>
 					<meta name="description" content={pageDescription} />
 					<link rel="canonical" href={canonicalUrl} />
+					{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 					<meta property="og:type" content="website" />
 					<meta property="og:site_name" content={site.name} />
