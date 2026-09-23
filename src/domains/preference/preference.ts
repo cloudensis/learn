@@ -1,4 +1,4 @@
-export type PreferenceOption = {
+type PreferenceOption = {
 	/** localStorage に保存する値 */
 	value: string;
 	/** プロンプトに差し込む表記切り替えのラベルにも使う */
