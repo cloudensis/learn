@@ -15,8 +15,8 @@ export function BookList({ books }: BookListProps) {
 								<h3 class="text-center font-medium">{book.title}</h3>
 							</div>
 						</div>
-						<p class="text-sm">{book.description}</p>
 						<p class="text-fg-muted text-sm">全{book.chapters.length}章</p>
+						<p class="text-sm">{book.description}</p>
 					</a>
 				</li>
 			))}
