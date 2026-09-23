@@ -40,15 +40,6 @@ export const preferences: Record<string, Preference> = {
 		],
 		defaultValue: "chrome",
 	},
-	device: {
-		key: "device",
-		label: "使っている端末",
-		options: [
-			{ value: "pc", label: "パソコン" },
-			{ value: "ipad", label: "iPad" },
-		],
-		defaultValue: "pc",
-	},
 };
 
 /** 設定値を保存する localStorage のキー */
