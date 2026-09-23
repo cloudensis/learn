@@ -54,7 +54,7 @@ export function Template() {
 				<p>今日のワークショップが終わると、次のものが手に入ります。</p>
 				<ul>
 					<li>自分で作った、遊べるゲーム</li>
-					<li>作ってみたいもののお試し版　(PoC)</li>
+					<li>作ってみたいもののお試し版 (PoC)</li>
 					<li>お試し版を完成品にするための学習ロードマップ</li>
 				</ul>
 
@@ -153,7 +153,7 @@ export function Template() {
 				<p>
 					例えば、
 					<code>ブラウザ</code>, <code>webサーバー</code>,
-					<code>データベース</code>, <code>認証認可</code>,<code>HTML</code>,
+					<code>データベース</code>, <code>認証認可</code>, <code>HTML</code>,
 					<code>CSS</code>, <code>JavaScript</code>
 					などの語彙を正しく理解しているとAIに要件をより詳細に伝えることができます。
 					例えば以下のような感じです。
@@ -325,7 +325,7 @@ export function Template() {
 				<p>おそらく長い道のりで、何度も挫折すると思いますが応援しています。</p>
 
 				<p>
-					このサイト内の以下のbookでは、このワークショップでやった内容に始まり、実際に開発環境を用意してアプリをインターネットに公開するまでを学べます。
+					このサイト内の以下の本では、このワークショップでやった内容に始まり、実際に開発環境を用意してアプリをインターネットに公開するまでを学べます。
 				</p>
 				<p>
 					<a href="/books/first-steps">AIと学ぶ、はじめてのソフトウェア開発</a>
