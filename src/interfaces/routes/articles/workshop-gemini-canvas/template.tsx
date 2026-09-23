@@ -54,7 +54,7 @@ export function Template() {
 				<p>今日のワークショップが終わると、次のものが手に入ります。</p>
 				<ul>
 					<li>自分で作った、遊べるゲーム</li>
-					<li>作ってみたいもののお試し版(PoC)</li>
+					<li>作ってみたいもののお試し版　(PoC)</li>
 					<li>お試し版を完成品にするための学習ロードマップ</li>
 				</ul>
 
@@ -122,7 +122,7 @@ export function Template() {
 				<p>しばらく待つと、画面にゲームが表示されます。</p>
 				<p>
 					<img
-						src="/articles/workshop-gemini-canvas/gemini-complate.png"
+						src="/articles/workshop-gemini-canvas/gemini-complete.png"
 						alt="Gemini Canvasでゲームが完成した状態画面キャプチャ"
 					/>
 				</p>
