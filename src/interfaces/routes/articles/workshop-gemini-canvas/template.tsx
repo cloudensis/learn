@@ -116,7 +116,7 @@ export function Template() {
 				</PromptBlock>
 				<p>作るゲームが決まったら早速ゲームを作ってもらいましょう。</p>
 				<PromptBlock>
-					{`canvas機能を使用して、PC,スマホ両方で遊べるゲームを作成してください。
+					{`Canvas機能を使用して、PC,スマホ両方で遊べるゲームを作成してください。
 （ここにゲームの要件を書く）`}
 				</PromptBlock>
 				<p>しばらく待つと、画面にゲームが表示されます。</p>
@@ -253,7 +253,7 @@ export function Template() {
 				</p>
 				<p>ゲームの時と同じようにプロンプト入力してPoCを作りましょう。</p>
 				<PromptBlock>
-					{`canvas機能を使用して、PC,スマホ両方で使えるアプリを作成してください。
+					{`Canvas機能を使用して、PC,スマホ両方で使えるアプリを作成してください。
 （ここにアプリの要件を書く）`}
 				</PromptBlock>
 				<p>
