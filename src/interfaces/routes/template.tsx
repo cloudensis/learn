@@ -18,20 +18,12 @@ export function Template() {
 
 			{books.length !== 0 && (
 				<Section title="Books">
-					<p class="mb-4 text-sm">
-						順番に読み進める、章立ての教材です。考え方と判断の基準をあつかいます。
-						最後まで進むと、形に残るものができあがります。
-					</p>
 					<BookList books={books} />
 				</Section>
 			)}
 
 			{articles.length !== 0 && (
 				<Section title="Articles">
-					<p class="mb-4 text-sm">
-						ひとつのテーマで完結する読みものです。道具の使い方など、
-						いま手を動かすのに役立つ話をあつかいます。気になったものから読めます。
-					</p>
 					<ArticleList articles={articles} />
 				</Section>
 			)}
