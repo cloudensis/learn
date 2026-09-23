@@ -2,8 +2,8 @@
 import { preferenceStorageKey } from "#/src/domains/preference/preference";
 
 /*
- * PromptBlock の切り替えを動かすクライアントスクリプト。
- * 選んだ値を localStorage に保存し、ページ内のすべての切り替えと差し込み位置に反映する。
+ * PromptBlock の切り替えを動かすクライアントスクリプト
+ * 選んだ値を localStorage に保存し、ページ内のすべての切り替えと差し込み位置に反映する
  */
 
 const radioSelector = "input[data-preference-key]";
@@ -24,7 +24,7 @@ function write(key: string, value: string) {
 	}
 }
 
-/** 値に対応する切り替えがあるときだけ、ページ内の表示をその値にそろえる。 */
+/** 値に対応する切り替えがあるときだけ、ページ内の表示をその値にそろえる */
 function apply(key: string, value: string) {
 	const radios = Array.from(
 		document.querySelectorAll<HTMLInputElement>(radioSelector),
