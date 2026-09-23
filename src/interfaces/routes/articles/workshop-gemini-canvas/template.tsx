@@ -54,7 +54,7 @@ export function Template() {
 				<p>今日のワークショップが終わると、次のものが手に入ります。</p>
 				<ul>
 					<li>自分で作った、遊べるゲーム</li>
-					<li>作ってみたいもののお試し版(PoC)</li>
+					<li>作ってみたいもののお試し版　(PoC)</li>
 					<li>お試し版を完成品にするための学習ロードマップ</li>
 				</ul>
 
@@ -116,13 +116,13 @@ export function Template() {
 				</PromptBlock>
 				<p>作るゲームが決まったら早速ゲームを作ってもらいましょう。</p>
 				<PromptBlock>
-					{`canvas機能を使用して、PC,スマホ両方で遊べるゲームを作成してください。
+					{`Canvas機能を使用して、PC、スマホ両方で遊べるゲームを作成してください。
 （ここにゲームの要件を書く）`}
 				</PromptBlock>
 				<p>しばらく待つと、画面にゲームが表示されます。</p>
 				<p>
 					<img
-						src="/articles/workshop-gemini-canvas/gemini-complate.png"
+						src="/articles/workshop-gemini-canvas/gemini-complete.png"
 						alt="Gemini Canvasでゲームが完成した状態画面キャプチャ"
 					/>
 				</p>
@@ -139,7 +139,7 @@ export function Template() {
 
 				<h3>仕組みを質問する</h3>
 				<p>
-					AIは単純な指示でもそこそこの品質もものを作れますが、自分が作りたいものを正確に形にするには技術的な知識が必要になります。
+					AIは単純な指示でもそこそこの品質のものを作れますが、自分が作りたいものを正確に形にするには技術的な知識が必要になります。
 				</p>
 				<p>できたものがどういう仕組みでできているかを質問しましょう。</p>
 				<PromptBlock>
@@ -253,7 +253,7 @@ export function Template() {
 				</p>
 				<p>ゲームの時と同じようにプロンプト入力してPoCを作りましょう。</p>
 				<PromptBlock>
-					{`canvas機能を使用して、PC,スマホ両方で使えるアプリを作成してください。
+					{`Canvas機能を使用して、PC、スマホ両方で使えるアプリを作成してください。
 （ここにアプリの要件を書く）`}
 				</PromptBlock>
 				<p>
@@ -271,8 +271,8 @@ export function Template() {
 					お試し版は、見た目と動きを試すためのものです。
 					たくさんの人が毎日使える<strong>プロダクト (完成品)</strong>
 					にするには、まだ足りないものがあります。
-					たとえば、データを保存しておく場所や、そのアプリ専用のドメイン (
-					google.com のようなもの) で公開する仕組みなどです。
+					たとえば、データを保存しておく場所や、そのアプリ専用のドメイン
+					(google.com のようなもの) で公開する仕組みなどです。
 				</p>
 				<p>
 					完成品にするまでに必要な技術と、それを学ぶ順番を、AIに整理してもらいます。
