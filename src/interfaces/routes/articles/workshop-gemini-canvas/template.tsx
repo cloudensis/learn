@@ -173,24 +173,35 @@ export function Template() {
 				<p>
 					<img src="" alt="Geminiの共有画面キャプチャ" />
 				</p>
-				<ol>
-					<li>Canvas の画面で共有ボタンを押し、公開リンクをコピーします</li>
-					<li>
-						<strong>講師が用意した共有場所に、そのリンクを貼ります</strong>
-					</li>
-					<li>共有場所から、ほかの人のゲームを開いて遊びます</li>
-				</ol>
 
-				<h3>遊ぶときに見てほしいこと</h3>
-				<p>ただ遊ぶだけでなく、次のことを見てみてください。</p>
-				<ul>
-					<li>同じもぐらたたきでも、人によってどこが違うか</li>
-					<li>「これはいいな」と思った工夫はどこか</li>
-					<li>自分のゲームにも入れてみたい工夫はあるか</li>
-				</ul>
 				<p>
-					同じ材料から、頼み方ひとつでまったく違うものができます。
-					<strong>何を作るかを決めるのは、AIではなくあなたです。</strong>
+					公開リンクを取得できたら、ブラウザで実際にゲームを遊べるか確認してください。
+					問題なければ以下のフォームに公開リンクを提出してください。
+				</p>
+
+				<p>
+					<a
+						href="https://forms.gle/V5xMKaq7ViA4crct8"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						公開リンク提出用Googleフォーム
+					</a>
+				</p>
+
+				<p>
+					提出された公開リンクの一覧は以下のリンクから確認できます。
+					ほかの人が作ったゲームも遊んでみましょう。
+				</p>
+
+				<p>
+					<a
+						href="https://docs.google.com/spreadsheets/d/1RbECiI2Z_Jjwq2ZxnXHmXv948QOuK0xU6WOc2UXD3XU/edit?usp=sharing"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						提出された公開リンクの一覧スプレッドシート
+					</a>
 				</p>
 
 				<h2>{steps[3].step}</h2>
