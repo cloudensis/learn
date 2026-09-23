@@ -1,39 +1,32 @@
 import { PromptBlock } from "../../_components/prompt-block";
 import meta from "./meta";
 
-const timetable = [
+const steps = [
 	{
-		time: "0〜5分",
 		step: "準備",
 		detail: "Gemini を開いて、Canvas を使えるようにする",
 	},
 	{
-		time: "5〜17分",
 		step: "1. ゲームを作る",
 		detail: "Canvas で小さなゲームを作って遊ぶ",
 	},
 	{
-		time: "17〜27分",
 		step: "2. 遊び合う",
 		detail: "ゲームを共有して、ほかの人のゲームで遊ぶ",
 	},
 	{
-		time: "27〜35分",
 		step: "3. 作りたいものを考える",
 		detail: "AIと相談しながら、作りたいものを1つに決める",
 	},
 	{
-		time: "35〜47分",
 		step: "4. お試し版を作る",
 		detail: "作りたいもののお試し版を Canvas で作る",
 	},
 	{
-		time: "47〜57分",
 		step: "5. ロードマップを作る",
 		detail: "本物にするための技術と学ぶ順番をAIと整理する",
 	},
 	{
-		time: "57〜60分",
 		step: "ふりかえり",
 		detail: "今日できたことと、次の一歩を確かめる",
 	},
@@ -56,14 +49,13 @@ export function Template() {
 				</p>
 
 				<ul>
-					<li>所要時間：60分</li>
 					<li>
 						必要なもの：パソコンまたは iPad、Google
 						アカウント（ログインできる状態にしておく）
 					</li>
 				</ul>
 
-				<p>今日の60分が終わると、次のものが手に入ります。</p>
+				<p>今日のワークショップが終わると、次のものが手に入ります。</p>
 				<ul>
 					<li>自分で作った、遊べるゲーム</li>
 					<li>作ってみたいものの、お試し版</li>
@@ -77,15 +69,13 @@ export function Template() {
 					<table class="w-full text-left text-sm">
 						<thead>
 							<tr class="border-border border-b">
-								<th class="py-2 pr-4 font-medium">時間</th>
 								<th class="py-2 pr-4 font-medium">やること</th>
 								<th class="py-2 font-medium">内容</th>
 							</tr>
 						</thead>
 						<tbody>
-							{timetable.map((row) => (
+							{steps.map((row) => (
 								<tr key={row.step} class="border-border border-b">
-									<td class="whitespace-nowrap py-2 pr-4">{row.time}</td>
 									<td class="whitespace-nowrap py-2 pr-4">{row.step}</td>
 									<td class="py-2">{row.detail}</td>
 								</tr>
@@ -94,11 +84,11 @@ export function Template() {
 					</table>
 				</div>
 				<p>
-					時間はめやすです。途中で終わらなくても、次の時間になったら次へ進んでください。
+					途中で終わらなくても、講師の合図があったら次へ進んでください。
 					あとから家で続きをやることもできます。
 				</p>
 
-				<h2>準備：Gemini を開く（5分）</h2>
+				<h2>準備：Gemini を開く</h2>
 				<p>
 					今日使うのは、Google のAI<strong>Gemini（ジェミニ）</strong>
 					です。 Gemini には<strong>Canvas（キャンバス）</strong>
@@ -135,7 +125,7 @@ export function Template() {
 					</li>
 				</ul>
 
-				<h2>1. ゲームを作ってみる（12分）</h2>
+				<h2>1. ゲームを作ってみる</h2>
 				<p>まず、AIにゲームを作ってもらいます。次の中から1つ選んでください。</p>
 				<ul>
 					<li>もぐらたたき：出てきたもぐらをタップして得点を稼ぐ</li>
@@ -196,7 +186,7 @@ export function Template() {
 					答えの中に出てきた言葉を1つ選んで、「〇〇って何ですか？」と聞いてみてもかまいません。
 				</p>
 
-				<h2>2. みんなで遊び合う（10分）</h2>
+				<h2>2. みんなで遊び合う</h2>
 				<p>
 					作ったゲームを共有して、ほかの人のゲームで遊んでみましょう。 Canvas
 					の画面にある<strong>「共有」</strong>
@@ -232,7 +222,7 @@ export function Template() {
 					<strong>何を作るかを決めるのは、AIではなくあなたです。</strong>
 				</p>
 
-				<h2>3. 作ってみたいものを、AIと相談して考える（8分）</h2>
+				<h2>3. 作ってみたいものを、AIと相談して考える</h2>
 				<p>
 					次は、自分が本当に作ってみたいものを考えます。
 					ゲームでなくてもかまいません。
@@ -271,7 +261,7 @@ export function Template() {
 「作るもの」「使う人」「お試し版の機能（3つまで）」の形で、短くまとめてください。`}
 				</PromptBlock>
 
-				<h2>4. お試し版を Canvas で作る（12分）</h2>
+				<h2>4. お試し版を Canvas で作る</h2>
 				<p>
 					3で決めたものの<strong>お試し版</strong>
 					を作ります。
@@ -299,7 +289,7 @@ export function Template() {
 					と思ったことを、2つか3つメモしておいてください。 これを5で使います。
 				</p>
 
-				<h2>5. 本物にするための、学習ロードマップを作る（10分）</h2>
+				<h2>5. 本物にするための、学習ロードマップを作る</h2>
 				<p>
 					お試し版は、見た目と動きを試すためのものです。
 					たくさんの人が毎日使える<strong>本物（プロダクト）</strong>
@@ -360,7 +350,7 @@ export function Template() {
 					難しすぎると感じたら、「もっと小さな一歩にしてください」と頼み直してください。
 				</p>
 
-				<h2>ふりかえり（3分）</h2>
+				<h2>ふりかえり</h2>
 				<p>次のことができたか、確かめてみてください。</p>
 				<ul>
 					<li>Canvas でゲームを作り、遊びながら直した</li>
