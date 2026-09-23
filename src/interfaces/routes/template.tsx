@@ -82,7 +82,7 @@ export function Template() {
 		<div class="mx-auto max-w-5xl space-y-16 px-4 py-12 lg:px-8">
 			<div class="space-y-4">
 				<h1 class="font-medium text-2xl">{site.name}</h1>
-				<p>ソフトウェア開発を学ぶ人のための、無料の学習教材です。</p>
+				<p>ソフトウェア開発者のための、無料の学習教材です。</p>
 				<p>
 					ChatGPTやClaudeなど、普段使っているAIを使ってソフトウェア開発を学習する方法を提供します。
 					この教材を離れたあとも、AIを学習パートナーとして独学できる状態を目標にしています。
