@@ -3,31 +3,31 @@ import meta from "./meta";
 
 const steps = [
 	{
-		step: "準備",
-		detail: "Gemini を開いて、Canvas を使えるようにする",
+		step: "1. Geminiを開く",
+		detail: "Gemini を開いて、Googleアカウントでログインする",
 	},
 	{
-		step: "1. ゲームを作る",
+		step: "2. ゲームを作る",
 		detail: "Canvas でゲームを作って遊ぶ",
 	},
 	{
-		step: "2. 共有する",
+		step: "3. 共有する",
 		detail: "ゲームを共有して、ほかの人のゲームで遊ぶ",
 	},
 	{
-		step: "3. 作りたいものを考える",
+		step: "4. 作りたいものを考える",
 		detail: "AIと相談しながら、作りたいものを決める",
 	},
 	{
-		step: "4. お試し版を作る",
+		step: "5. お試し版を作る",
 		detail: "作りたいもののお試し版を Canvas で作る",
 	},
 	{
-		step: "5. ロードマップを作る",
+		step: "6. ロードマップを作る",
 		detail: "完成品にするための技術と学ぶ順番をAIと整理する",
 	},
 	{
-		step: "6. ふりかえり",
+		step: "7. ふりかえり",
 		detail: "今日できたことと、次の一歩を確かめる",
 	},
 ];
@@ -78,27 +78,27 @@ export function Template() {
 					</table>
 				</div>
 
-				<h2>準備：Gemini を開く</h2>
+				<h2>{steps[0].step}</h2>
 				<p>
-					今日使うのは、Google のAI　<strong>Gemini（ジェミニ）</strong>
-					です。 Gemini には<strong>Canvas（キャンバス）</strong>
-					という機能があります。
-					頼んだものをAIが作り、その場で動かして見せてくれる機能です。
+					今日使うのは、Google のAI　<strong>Gemini</strong>
+					です。以下のリンクからGeminiを開いてください。
 				</p>
-				<ol>
-					<li>
-						パソコンはブラウザで <code>https://gemini.google.com/</code>{" "}
-						を開きます。iPad はブラウザで同じURLを開くか、Gemini
-						アプリを使います
-					</li>
-					<li>Google アカウントでログインします</li>
-					<li>
-						文字を入力する欄のまわりにある「Canvas」を選びます。見当たらないときは、「ツール」や「＋」のボタンの中を探してください
-					</li>
-				</ol>
 				<p>
-					Canvas
-					が見つからないときや、学校のアカウントで使えないと表示されたときは、手を挙げて近くの人か講師に聞いてください。
+					<a
+						href="https://gemini.google.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						https://gemini.google.com/
+					</a>
+				</p>
+
+				<p>
+					画面にログインボタンが表示される場合はログインボタンを押して、自分のGoogleアカウントでログインしてください。アカウントがない場合は新規作成してください。
+				</p>
+
+				<p>
+					<img src="" alt="geminiにログインした状態画面キャプチャ" />
 				</p>
 
 				<h3>注意点</h3>
@@ -108,7 +108,7 @@ export function Template() {
 					</strong>
 				</p>
 
-				<h2>1. ゲームを作ってみる</h2>
+				<h2>{steps[1].step}</h2>
 				<p>まず、AIにゲームを作ってもらいます。次の中から1つ選んでください。</p>
 				<ul>
 					<li>もぐらたたき：出てきたもぐらをタップして得点を稼ぐ</li>
@@ -169,7 +169,7 @@ export function Template() {
 					答えの中に出てきた言葉を1つ選んで、「〇〇って何ですか？」と聞いてみてもかまいません。
 				</p>
 
-				<h2>2. みんなで遊び合う</h2>
+				<h2>{steps[2].step}</h2>
 				<p>
 					作ったゲームを共有して、ほかの人のゲームで遊んでみましょう。 Canvas
 					の画面にある<strong>「共有」</strong>
@@ -205,7 +205,7 @@ export function Template() {
 					<strong>何を作るかを決めるのは、AIではなくあなたです。</strong>
 				</p>
 
-				<h2>3. 作ってみたいものを、AIと相談して考える</h2>
+				<h2>{steps[3].step}</h2>
 				<p>
 					次は、自分が本当に作ってみたいものを考えます。
 					ゲームでなくてもかまいません。
@@ -244,7 +244,7 @@ export function Template() {
 「作るもの」「使う人」「お試し版の機能（3つまで）」の形で、短くまとめてください。`}
 				</PromptBlock>
 
-				<h2>4. お試し版を Canvas で作る</h2>
+				<h2>{steps[4].step}</h2>
 				<p>
 					3で決めたものの<strong>お試し版</strong>
 					を作ります。
@@ -272,7 +272,7 @@ export function Template() {
 					と思ったことを、2つか3つメモしておいてください。 これを5で使います。
 				</p>
 
-				<h2>5. 本物にするための、学習ロードマップを作る</h2>
+				<h2>{steps[5].step}</h2>
 				<p>
 					お試し版は、見た目と動きを試すためのものです。
 					たくさんの人が毎日使える<strong>本物（プロダクト）</strong>
@@ -333,7 +333,7 @@ export function Template() {
 					難しすぎると感じたら、「もっと小さな一歩にしてください」と頼み直してください。
 				</p>
 
-				<h2>6. ふりかえり</h2>
+				<h2>{steps[6].step}</h2>
 				<p>次のことができたか、確かめてみてください。</p>
 				<ul>
 					<li>Canvas でゲームを作り、遊びながら直した</li>
