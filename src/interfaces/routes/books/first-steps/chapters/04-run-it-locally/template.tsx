@@ -14,9 +14,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第2部 手元で作る ／ 第4章
-				</p>
+				<p class="text-sm">いまの位置：第2部 手元で作る ／ 第4章</p>
 				<p>
 					第2章で作ったゲームは、まだAIツールの中にしかありません。
 					この章では、それを<strong>自分のパソコンのファイル</strong>

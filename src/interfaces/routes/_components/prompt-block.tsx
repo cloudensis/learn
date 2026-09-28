@@ -1,4 +1,4 @@
-import { CodeBlock } from "@cloudensis/design-system/components/ui/code-block";
+import { CodeBlock } from "@cloudensis/design-system/components/code-block";
 import type { CodeLanguage } from "@cloudensis/design-system/lib/highlight";
 import { type Child, cloneElement, isValidElement, useId } from "hono/jsx";
 import {
@@ -18,6 +18,7 @@ type PromptBlockProps = {
 const OPEN = "";
 const CLOSE = "";
 const placeholderPattern = /\{\{(\w+)\}\}/g;
+const codeClass = "mb-[1.25em]";
 
 /**
  * CodeBlock が描画した要素のうち、目印で囲まれた部分を差し込み位置に置き換える。
@@ -92,7 +93,7 @@ export function PromptBlock({ lang = "markdown", children }: PromptBlockProps) {
 					key={preference.key}
 					role="radiogroup"
 					aria-label={preference.label}
-					class="flex flex-wrap items-center justify-end gap-3 text-fg-muted text-xs"
+					class="flex flex-wrap items-center justify-end gap-3 text-xs"
 				>
 					<span>{preference.label}</span>
 					{preference.options.map((option) => (
@@ -113,10 +114,15 @@ export function PromptBlock({ lang = "markdown", children }: PromptBlockProps) {
 					))}
 				</div>
 			))}
+			{/* 末尾の子になると prose が下の余白を 0 にするため、prose の pre と同じ余白を付ける。 */}
 			{used.length > 0 ? (
-				replacePlaceholders(CodeBlock({ lang, children: code }))
+				replacePlaceholders(
+					CodeBlock({ lang, class: codeClass, children: code }),
+				)
 			) : (
-				<CodeBlock lang={lang}>{code}</CodeBlock>
+				<CodeBlock lang={lang} class={codeClass}>
+					{code}
+				</CodeBlock>
 			)}
 		</div>
 	);

@@ -13,9 +13,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第1部 まず作ってみる ／ 第1章
-				</p>
+				<p class="text-sm">いまの位置：第1部 まず作ってみる ／ 第1章</p>
 				<p>
 					この本では、ブラウザで遊べるゲームを1つ作り、それを自分のパソコンに持ってきて、インターネットに公開し、自分の手で育てていきます。
 					プログラミングの知識は要りません。 書き方を覚える代わりに、

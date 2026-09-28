@@ -14,9 +14,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第4部 自分で進む ／ 第8章
-				</p>
+				<p class="text-sm">いまの位置：第4部 自分で進む ／ 第8章</p>
 				<p>
 					第7章の最後に足したタイトルロゴは、手元では表示されたのに、公開先では表示されなかったはずです。
 					同じファイルを置いたはずなのに、場所によって動きが変わる。

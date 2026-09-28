@@ -13,9 +13,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第1部 まず作ってみる ／ 第2章
-				</p>
+				<p class="text-sm">いまの位置：第1部 まず作ってみる ／ 第2章</p>
 				<p>
 					説明より先に、まず作ってみます。
 					第1章で用意したAIツールには、作ったものをその場で動かす機能があります。
