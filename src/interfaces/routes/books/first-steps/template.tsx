@@ -1,5 +1,5 @@
-import { Section } from "@cloudensis/design-system/components/layout/section";
 import { totalMinutes } from "#/src/domains/book/book";
+import { Section } from "#/src/interfaces/components/section";
 import { HomeLink } from "../../_components/home-link";
 import { ChapterList } from "../_components/chapter-list";
 import meta from "./meta";
@@ -10,7 +10,7 @@ export function Template() {
 			<div class="space-y-4">
 				<h1 class="font-medium text-2xl">{meta.title}</h1>
 				<p>{meta.description}</p>
-				<p class="text-fg-muted text-sm">
+				<p class="text-sm">
 					全{meta.chapters.length}章 ／ 目安 約
 					{Math.round(totalMinutes(meta) / 60)}
 					時間 ／ 費用 0円
@@ -26,7 +26,7 @@ export function Template() {
 					<li>詰まったとき、原因の場所を切り分けてAIに相談できる</li>
 					<li>次に何を学ぶかを、理由をつけて自分で決められる</li>
 				</ul>
-				<p class="mt-4 text-fg-muted text-sm">
+				<p class="mt-4 text-sm">
 					最初のひとつは、途中で手が止まらないための目印です。この本の本題は、残りの3つのほうにあります。
 				</p>
 			</Section>
@@ -68,7 +68,7 @@ export function Template() {
 				</ul>
 			</Section>
 
-			<nav class="border-border border-t pt-6">
+			<nav class="border-default border-t pt-6">
 				<HomeLink />
 			</nav>
 		</div>

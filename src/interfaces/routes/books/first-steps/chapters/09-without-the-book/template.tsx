@@ -14,9 +14,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第4部 自分で進む ／ 第9章
-				</p>
+				<p class="text-sm">いまの位置：第4部 自分で進む ／ 第9章</p>
 				<p>
 					この章では、この本が扱っていない機能を1つ選び、ゲームに足して、公開し直します。
 					これまでと違うのは、<strong>AIに送る文を、この本が用意しない</strong>

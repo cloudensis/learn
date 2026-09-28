@@ -13,7 +13,7 @@ type ChapterHeaderProps = {
 export function ChapterHeader({ book, chapter }: ChapterHeaderProps) {
 	return (
 		<header class="space-y-4">
-			<p class="text-fg-muted text-sm">
+			<p class="text-sm">
 				<a href={`/books/${book.slug}`} class="hover:underline">
 					{book.title}
 				</a>
@@ -21,7 +21,7 @@ export function ChapterHeader({ book, chapter }: ChapterHeaderProps) {
 			<h1 class="font-medium text-2xl">
 				{chapterLabel(chapter)} {chapter.title}
 			</h1>
-			<dl class="space-y-2 rounded border border-border bg-surface p-4 text-sm">
+			<dl class="space-y-2 rounded border border-default bg-neutral-50 p-4 text-sm">
 				<div class="flex gap-3">
 					<dt class="shrink-0 font-medium">ゴール</dt>
 					<dd>{chapter.goal}</dd>

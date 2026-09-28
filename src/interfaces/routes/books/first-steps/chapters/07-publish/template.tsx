@@ -14,9 +14,7 @@ export function Template() {
 			<ChapterHeader book={book} chapter={meta} />
 
 			<article class="prose">
-				<p class="text-fg-muted text-sm">
-					いまの位置：第3部 世界に出す ／ 第7章
-				</p>
+				<p class="text-sm">いまの位置：第3部 世界に出す ／ 第7章</p>
 				<p>
 					いよいよ、ゲームをインターネットに公開します。 この章を終えると、
 					<strong>自分のゲームのURL</strong>

@@ -16,7 +16,7 @@ type TroubleshootProps = {
 /** 章ごとのつまずきと対処をまとめたブロック。 */
 export function Troubleshoot({ items, footer }: TroubleshootProps) {
 	return (
-		<div class="space-y-3 rounded border border-border bg-surface p-4 text-sm">
+		<div class="space-y-3 rounded border border-default bg-neutral-50 p-4 text-sm">
 			<p class="font-medium">つまずいたら</p>
 			<dl class="space-y-3">
 				{items.map((item) => (

@@ -19,7 +19,7 @@ export function AskAi({
 		<div class="space-y-2">
 			<p class="font-medium text-sm">{title}</p>
 			<PromptBlock>{children}</PromptBlock>
-			{note && <p class="text-fg-muted text-sm">{note}</p>}
+			{note && <p class="text-sm">{note}</p>}
 		</div>
 	);
 }

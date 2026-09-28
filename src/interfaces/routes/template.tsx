@@ -1,5 +1,5 @@
-import { Section } from "@cloudensis/design-system/components/layout/section";
 import { site } from "#/src/domains/company/constants";
+import { Section } from "#/src/interfaces/components/section";
 import { ArticleList } from "./_components/article-list";
 import { BookList } from "./_components/book-list";
 import { articles } from "./articles/registry";

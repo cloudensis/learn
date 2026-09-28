@@ -17,7 +17,7 @@ export function ChapterList({ book }: ChapterListProps) {
 							{chapterLabel(chapter)} {chapter.title}
 						</h3>
 						<p class="text-sm">{chapter.description}</p>
-						<p class="text-fg-muted text-sm">
+						<p class="text-sm">
 							目安 {chapter.estimatedMinutes}分 ／ {chapter.deliverable}
 						</p>
 					</a>

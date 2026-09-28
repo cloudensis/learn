@@ -1,8 +1,8 @@
-import { Footer } from "@cloudensis/design-system/components/layout/footer";
-import { Header } from "@cloudensis/design-system/components/layout/header";
 import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
 import { Link, Script, ViteClient } from "vite-ssr-components/hono";
-import { company, site } from "#/src/domains/company/constants";
+import { site } from "#/src/domains/company/constants";
+import { Footer } from "#/src/interfaces/components/footer";
+import { Header } from "#/src/interfaces/components/header";
 
 declare module "hono" {
 	interface ContextRenderer {
@@ -57,9 +57,9 @@ export const renderer = jsxRenderer(
 					<Script src="/src/interfaces/scripts/preferences.ts" />
 				</head>
 				<body class="flex min-h-svh flex-col">
-					<Header title={site.name} />
+					<Header />
 					<main class="flex-1">{children}</main>
-					<Footer copyrightHolder={company.name} links={[]} />
+					<Footer />
 				</body>
 			</html>
 		);

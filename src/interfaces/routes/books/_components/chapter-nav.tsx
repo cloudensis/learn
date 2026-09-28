@@ -20,13 +20,13 @@ export function ChapterNav({ book, chapter }: ChapterNavProps) {
 			: undefined;
 
 	return (
-		<nav class="space-y-4 border-border border-t pt-6 text-sm">
+		<nav class="space-y-4 border-default border-t pt-6 text-sm">
 			{(previous || next) && (
 				<div class="grid gap-3 sm:grid-cols-2">
 					{previous && (
 						<a
 							href={`/books/${book.slug}/${previous.slug}`}
-							class="block rounded border border-border p-3 hover:underline"
+							class="block rounded border border-default p-3 hover:underline"
 						>
 							← {chapterLabel(previous)} {previous.title}
 						</a>
@@ -34,7 +34,7 @@ export function ChapterNav({ book, chapter }: ChapterNavProps) {
 					{next && (
 						<a
 							href={`/books/${book.slug}/${next.slug}`}
-							class="block rounded border border-border p-3 hover:underline sm:col-start-2 sm:text-right"
+							class="block rounded border border-default p-3 hover:underline sm:col-start-2 sm:text-right"
 						>
 							{chapterLabel(next)} {next.title} →
 						</a>

@@ -7,7 +7,7 @@ export function Template() {
 		<div class="mx-auto max-w-5xl space-y-8 p-5">
 			<article class="prose max-w-5xl">
 				<h1>{meta.title}</h1>
-				<p class="text-fg-muted text-sm">確認日：{meta.publishedAt}</p>
+				<p class="text-sm">確認日：{meta.publishedAt}</p>
 
 				<p>
 					いちど、パソコンの「ダウンロード」フォルダを開いてみてください。
@@ -289,12 +289,12 @@ export function Template() {
 					分からなくなったら、この記事のようにAIに聞けば大丈夫です。
 					ほかの本や記事からこの記事に来た人は、元のページに戻って続きを進めてください。
 				</p>
-				<p class="text-fg-muted text-sm">
+				<p class="text-sm">
 					この記事の説明とパソコンの画面が違っていたら、見えているものをそのままAIに伝えて聞いてください。
 				</p>
 			</article>
 
-			<nav class="border-border border-t pt-6">
+			<nav class="border-default border-t pt-6">
 				<HomeLink />
 			</nav>
 		</div>
