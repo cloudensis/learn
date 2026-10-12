@@ -3,9 +3,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
-		"preview": "$npm_execpath run build && vite preview",
-		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"build": "vite build && node scripts/ssg.ts",
+		"preview": "$npm_execpath run build && wrangler dev",
 		"typecheck": "tsc --noEmit",
 		"lint": "biome check",
 		"format": "biome check --write --unsafe"
@@ -16,8 +15,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
-		"@cloudflare/vite-plugin": "^1.63.0",
+		"@hono/vite-dev-server": "^0.26.1",
 		"@tailwindcss/vite": "^4.3.3",
+		"@types/node": "^26.6.5",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^7.0.2",
 		"vite": "^8.3.3",

@@ -4,7 +4,7 @@ import book from "../../meta";
 import meta from "./meta";
 import { Template } from "./template";
 
-const routes = new Hono<{ Bindings: CloudflareBindings }>();
+const routes = new Hono();
 
 routes.get(`/books/${book.slug}/${meta.slug}`, async (c) => {
 	return c.render(<Template />, {

@@ -3,7 +3,7 @@ import { site } from "#/src/domains/company/constants";
 import meta from "./meta";
 import { Template } from "./template";
 
-const routes = new Hono<{ Bindings: CloudflareBindings }>();
+const routes = new Hono();
 
 routes.get(`/books/${meta.slug}`, async (c) => {
 	return c.render(<Template />, {
