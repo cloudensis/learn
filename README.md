@@ -51,7 +51,10 @@ npm run dev        # 開発サーバー
 npm run lint       # Biome
 npm run format     # 自動修正
 npm run typecheck  # 型エラーチェック
-npm run build      # 本番ビルド
+npm run build      # 静的サイトとして dist/ に書き出す
+npm run preview    # 書き出した dist/ を wrangler dev で配信して確認
 ```
 
-デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers へ行われます。
+サーバーサイドの処理は持たない静的サイトです。`npm run build` で Hono のアプリを `vite build` でビルドし、`hono/ssg` で全ページを HTML として `dist/` に書き出します（`scripts/ssg.ts`）。
+
+デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers の Static Assets（Worker スクリプトなし）へ行われます。
