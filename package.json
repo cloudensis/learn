@@ -2,9 +2,8 @@
 	"name": "learn",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build && node scripts/ssg.ts",
-		"preview": "$npm_execpath run build && wrangler dev",
+		"dev": "cf dev",
+		"build": "cf build",
 		"typecheck": "tsc --noEmit",
 		"lint": "biome check",
 		"format": "biome check --write --unsafe"
@@ -15,14 +14,14 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
-		"@hono/vite-dev-server": "^0.26.1",
+		"@cloudflare/vite-plugin": "2.0.0-beta.v.3",
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/node": "^26.6.5",
+		"cf": "1.0.0-beta.20",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^7.0.2",
-		"vite": "^8.3.4",
-		"vite-ssr-components": "^0.8.0",
-		"wrangler": "^4.151.1"
+		"vite": "^8.3.5",
+		"vite-ssr-components": "^0.9.0"
 	},
 	"imports": {
 		"#/*": [
