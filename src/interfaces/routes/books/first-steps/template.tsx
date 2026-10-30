@@ -8,7 +8,7 @@ export function Template() {
 	return (
 		<div class="mx-auto max-w-5xl space-y-12 px-4 py-12 lg:px-8">
 			<div class="space-y-4">
-				<h1 class="font-medium text-2xl">{meta.title}</h1>
+				<h1 class="text-2xl font-medium">{meta.title}</h1>
 				<p>{meta.description}</p>
 				<p class="text-sm">
 					全{meta.chapters.length}章 ／ 目安 約

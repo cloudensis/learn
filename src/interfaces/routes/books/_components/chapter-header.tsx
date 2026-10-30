@@ -18,10 +18,10 @@ export function ChapterHeader({ book, chapter }: ChapterHeaderProps) {
 					{book.title}
 				</a>
 			</p>
-			<h1 class="font-medium text-2xl">
+			<h1 class="text-2xl font-medium">
 				{chapterLabel(chapter)} {chapter.title}
 			</h1>
-			<dl class="space-y-2 rounded border border-default bg-neutral-50 p-4 text-sm">
+			<dl class="border-default space-y-2 rounded border bg-neutral-50 p-4 text-sm">
 				<div class="flex gap-3">
 					<dt class="shrink-0 font-medium">ゴール</dt>
 					<dd>{chapter.goal}</dd>
