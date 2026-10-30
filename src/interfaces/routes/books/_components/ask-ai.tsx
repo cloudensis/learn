@@ -17,7 +17,7 @@ export function AskAi({
 }: AskAiProps) {
 	return (
 		<div class="space-y-2">
-			<p class="font-medium text-sm">{title}</p>
+			<p class="text-sm font-medium">{title}</p>
 			<PromptBlock>{children}</PromptBlock>
 			{note && <p class="text-sm">{note}</p>}
 		</div>

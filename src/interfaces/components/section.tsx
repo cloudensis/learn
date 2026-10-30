@@ -8,7 +8,7 @@ type SectionProps = {
 export function Section({ title, children }: SectionProps) {
 	return (
 		<section>
-			<h2 class="mb-4 font-medium text-xl">{title}</h2>
+			<h2 class="mb-4 text-xl font-medium">{title}</h2>
 			{children}
 		</section>
 	);
