@@ -70,7 +70,7 @@ export function Template() {
 						<tbody>
 							{steps.map((row) => (
 								<tr key={row.step} class="border-default border-b">
-									<td class="whitespace-nowrap py-2 pr-4">{row.step}</td>
+									<td class="py-2 pr-4 whitespace-nowrap">{row.step}</td>
 									<td class="py-2">{row.detail}</td>
 								</tr>
 							))}
