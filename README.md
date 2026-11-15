@@ -41,25 +41,44 @@
 | URL  | `/articles/<slug>` | `/books/<slug>`、章は `/books/<slug>/<chapter>` |
 
 book は対象読者とゴールを1冊ごとに定める。冒頭で対象を明示し、その読者に必要な深さで書く。
-各 book の設計は、その book のフォルダの README（例：`src/interfaces/routes/books/first-steps/README.md`）に書く。
+各 book の設計は、その book のフォルダの README（例：`src/routes/books/first-steps/README.md`）に書く。
 
 ## 開発
+
+[@cloudensis/create-hono](https://github.com/cloudensis/create-hono) のテンプレートをもとにしています。
 
 ```sh
 npm install
 npm run dev        # 開発サーバー（Workers のランタイムで動かす）
+npm test           # テスト（Vitest）
 npm run lint       # Biome
 npm run format     # 自動修正
 npm run typecheck  # 型エラーチェック
-npm run build      # 静的サイトとして .cloudflare/output/ に書き出す
+npm run build      # cf build のあと、全ページを HTML に書き出す（SSG）
 ```
 
-サーバーサイドの処理は持たない静的サイトです。ビルドは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。開発中は Hono のアプリを Workers のランタイムで動かし、`npm run build` では `hono/ssg` で全ページを HTML として書き出します（`scripts/ssg.ts`）。
+### ルーティング
 
-デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers の Static Assets（Worker スクリプトなし）へ行われます。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
+`src/routes` 以下の `index.tsx` がルートになり、フォルダの名前がそのまま URL になります（`src/lib/router`）。
+
+| ファイル                                  | パス                      |
+| ----------------------------------------- | ------------------------- |
+| `routes/index.tsx`                        | `/`                       |
+| `routes/articles/<slug>/index.tsx`        | `/articles/<slug>`        |
+| `routes/books/<slug>/index.tsx`           | `/books/<slug>`           |
+| `routes/books/<slug>/<chapter>/index.tsx` | `/books/<slug>/<chapter>` |
+
+- ルートファイルは `GET` などの HTTP メソッド名でハンドラーを export します。
+- `ssg = true` を export したページは、`npm run build` で静的 HTML として書き出されます（`scripts/ssg.mjs`）。
+- `meta.ts` の `slug` はフォルダの名前と揃えてください。
+- `index.tsx` 以外のファイル（`template.tsx`、`meta.ts`、`_components/` など）はルートになりません。
+
+ビルドとデプロイは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。書き出した HTML は静的アセットとして配信され、それ以外のリクエスト（404 など）は Worker の Hono アプリが返します。
+
+デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers へ行われます。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
 
 ```sh
 npx cf auth login
-npx cf previews deploy   # 現在のブランチ名で Preview をデプロイ
-npx cf deploy            # 本番にデプロイ
+npx cf previews deploy           # 現在のブランチ名で Preview をデプロイ
+npm run build && npx cf deploy --prebuilt   # 本番にデプロイ
 ```

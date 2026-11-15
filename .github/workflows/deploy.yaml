@@ -5,6 +5,9 @@ on:
     types:
       - published
 
+permissions:
+  contents: read
+
 jobs:
   test:
     uses: ./.github/workflows/test.yaml
@@ -22,7 +25,9 @@ jobs:
 
       - run: npm ci
 
-      - run: npx cf deploy
+      - run: npm run build
+
+      - run: npx cf deploy --prebuilt
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
