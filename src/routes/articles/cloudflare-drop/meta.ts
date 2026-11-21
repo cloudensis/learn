@@ -1,4 +1,4 @@
-import type { Article } from "../../../lib/article";
+import type { Article } from "@/lib/article";
 
 const meta: Article = {
 	slug: "cloudflare-drop",

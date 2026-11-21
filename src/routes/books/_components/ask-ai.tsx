@@ -1,4 +1,4 @@
-import { PromptBlock } from "../../_components/prompt-block";
+import { PromptBlock } from "@/routes/_components/prompt-block";
 
 type AskAiProps = {
 	/** 何のための質問かを示す見出し。 */

@@ -1,4 +1,4 @@
-import { type Book, type BookChapter, chapterLabel } from "../../../lib/book";
+import { type Book, type BookChapter, chapterLabel } from "@/lib/book";
 
 type ChapterHeaderProps = {
 	book: Book;

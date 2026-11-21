@@ -1,5 +1,5 @@
-import { type Book, type BookChapter, chapterLabel } from "../../../lib/book";
-import { HomeLink } from "../../_components/home-link";
+import { type Book, type BookChapter, chapterLabel } from "@/lib/book";
+import { HomeLink } from "@/routes/_components/home-link";
 
 type ChapterNavProps = {
 	book: Book;

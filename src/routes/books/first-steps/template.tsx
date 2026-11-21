@@ -1,7 +1,7 @@
-import { Section } from "../../../components/section";
-import { totalMinutes } from "../../../lib/book";
-import { HomeLink } from "../../_components/home-link";
-import { ChapterList } from "../_components/chapter-list";
+import { Section } from "@/components/section";
+import { totalMinutes } from "@/lib/book";
+import { HomeLink } from "@/routes/_components/home-link";
+import { ChapterList } from "@/routes/books/_components/chapter-list";
 import meta from "./meta";
 
 export function Template() {

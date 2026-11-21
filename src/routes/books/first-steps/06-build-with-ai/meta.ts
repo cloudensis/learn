@@ -1,4 +1,4 @@
-import type { BookChapter } from "../../../../lib/book";
+import type { BookChapter } from "@/lib/book";
 
 const meta: BookChapter = {
 	slug: "06-build-with-ai",

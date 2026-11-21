@@ -5,7 +5,7 @@ import {
 	type Preference,
 	preferenceLabel,
 	preferences,
-} from "../../lib/preference";
+} from "@/lib/preference";
 
 type PromptBlockProps = {
 	/** 省略すると markdown としてハイライトする。 */

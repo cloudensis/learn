@@ -1,4 +1,4 @@
-import { PromptBlock } from "../../_components/prompt-block";
+import { PromptBlock } from "@/routes/_components/prompt-block";
 import meta from "./meta";
 
 const steps = [

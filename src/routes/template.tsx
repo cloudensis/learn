@@ -1,5 +1,5 @@
-import { Section } from "../components/section";
-import { site } from "../lib/site";
+import { Section } from "@/components/section";
+import { site } from "@/lib/site";
 import { ArticleList } from "./_components/article-list";
 import { BookList } from "./_components/book-list";
 import { articles } from "./articles/registry";

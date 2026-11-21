@@ -1,4 +1,4 @@
-import { company } from "../lib/site";
+import { company } from "@/lib/site";
 
 export function Footer() {
 	return (

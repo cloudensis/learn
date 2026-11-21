@@ -1,4 +1,4 @@
-import type { Book } from "../../lib/book";
+import type { Book } from "@/lib/book";
 
 type BookListProps = {
 	books: Book[];

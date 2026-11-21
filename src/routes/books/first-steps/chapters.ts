@@ -1,4 +1,4 @@
-import type { BookChapter } from "../../../lib/book";
+import type { BookChapter } from "@/lib/book";
 
 const metaModules = import.meta.glob<{ default: BookChapter }>("./*/meta.ts", {
 	eager: true,

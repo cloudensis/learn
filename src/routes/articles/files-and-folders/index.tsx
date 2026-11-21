@@ -1,5 +1,5 @@
 import type { Handler } from "hono";
-import { site } from "../../../lib/site";
+import { site } from "@/lib/site";
 import meta from "./meta";
 import { Template } from "./template";
 

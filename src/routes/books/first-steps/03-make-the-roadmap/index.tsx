@@ -1,6 +1,6 @@
 import type { Handler } from "hono";
-import { site } from "../../../../lib/site";
-import book from "../meta";
+import { site } from "@/lib/site";
+import book from "@/routes/books/first-steps/meta";
 import meta from "./meta";
 import { Template } from "./template";
 

@@ -1,5 +1,5 @@
-import { HomeLink } from "../../_components/home-link";
-import { PromptBlock } from "../../_components/prompt-block";
+import { HomeLink } from "@/routes/_components/home-link";
+import { PromptBlock } from "@/routes/_components/prompt-block";
 import meta from "./meta";
 
 export function Template() {

@@ -1,10 +1,10 @@
-import { AskAi } from "../../_components/ask-ai";
-import { ChapterHeader } from "../../_components/chapter-header";
-import { ChapterNav } from "../../_components/chapter-nav";
-import { Checklist } from "../../_components/checklist";
-import { Troubleshoot } from "../../_components/troubleshoot";
-import { askStyles } from "../_components/ask-styles";
-import book from "../meta";
+import { AskAi } from "@/routes/books/_components/ask-ai";
+import { ChapterHeader } from "@/routes/books/_components/chapter-header";
+import { ChapterNav } from "@/routes/books/_components/chapter-nav";
+import { Checklist } from "@/routes/books/_components/checklist";
+import { Troubleshoot } from "@/routes/books/_components/troubleshoot";
+import { askStyles } from "@/routes/books/first-steps/_components/ask-styles";
+import book from "@/routes/books/first-steps/meta";
 import meta from "./meta";
 
 export function Template() {

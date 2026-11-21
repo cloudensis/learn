@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import { preferenceStorageKey } from "../lib/preference";
+import { preferenceStorageKey } from "@/lib/preference";
 
 /*
  * PromptBlock の切り替えを動かすクライアントスクリプト
