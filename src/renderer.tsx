@@ -2,6 +2,7 @@ import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
 import { Link, Script, ViteClient } from "vite-ssr-components/hono";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
+import { isPreviewBuild } from "./lib/build";
 import { site } from "./lib/site";
 
 export type Meta = {
@@ -36,7 +37,9 @@ export const renderer = jsxRenderer(
 					<title>{pageTitle}</title>
 					<meta name="description" content={pageDescription} />
 					<link rel="canonical" href={canonicalUrl} />
-					{noindex && <meta name="robots" content="noindex, nofollow" />}
+					{(noindex || isPreviewBuild) && (
+						<meta name="robots" content="noindex, nofollow" />
+					)}
 
 					<meta property="og:type" content="website" />
 					<meta property="og:site_name" content={site.name} />
