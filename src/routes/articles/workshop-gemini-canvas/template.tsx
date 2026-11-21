@@ -1,5 +1,6 @@
 import { PromptBlock } from "@/routes/_components/prompt-block";
 import meta from "./meta";
+import { submission } from "./submission";
 
 const steps = [
 	{
@@ -182,33 +183,44 @@ export function Template() {
 
 				<p>
 					公開リンクを取得できたら、ブラウザで実際にゲームを遊べるか確認してください。
-					問題なければ以下のフォームに公開リンクを提出してください。
 				</p>
 
-				<p>
-					<a
-						href="https://forms.gle/V5xMKaq7ViA4crct8"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						公開リンク提出用Googleフォーム
-					</a>
-				</p>
+				{submission.formUrl ? (
+					<>
+						<p>問題なければ以下のフォームに公開リンクを提出してください。</p>
+						<p>
+							<a
+								href={submission.formUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								公開リンク提出用Googleフォーム
+							</a>
+						</p>
+					</>
+				) : (
+					<p>
+						公開リンクの提出の受付は終了しました。ワークショップに参加している人は、講師の案内に従ってください。
+					</p>
+				)}
 
-				<p>
-					提出された公開リンクの一覧は以下のリンクから確認できます。
-					ほかの人が作ったゲームも遊んでみましょう。
-				</p>
-
-				<p>
-					<a
-						href="https://docs.google.com/spreadsheets/d/1RbECiI2Z_Jjwq2ZxnXHmXv948QOuK0xU6WOc2UXD3XU/edit?usp=sharing"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						提出された公開リンクの一覧スプレッドシート
-					</a>
-				</p>
+				{submission.listUrl && (
+					<>
+						<p>
+							提出された公開リンクの一覧は以下のリンクから確認できます。
+							ほかの人が作ったゲームも遊んでみましょう。
+						</p>
+						<p>
+							<a
+								href={submission.listUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								提出された公開リンクの一覧スプレッドシート
+							</a>
+						</p>
+					</>
+				)}
 
 				<h2>{steps[3].step}</h2>
 				<p>
