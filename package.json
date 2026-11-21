@@ -31,5 +31,10 @@
 			"./*.tsx",
 			"./*"
 		]
+	},
+	"overrides": {
+		"@cloudensis/design-system": {
+			"hono": "$hono"
+		}
 	}
 }
