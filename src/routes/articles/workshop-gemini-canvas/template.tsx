@@ -1,4 +1,5 @@
 import { PromptBlock } from "@/routes/_components/prompt-block";
+import { PublishedDate } from "@/routes/_components/published-date";
 import meta from "./meta";
 
 const steps = [
@@ -37,6 +38,7 @@ export function Template() {
 		<div class="mx-auto max-w-5xl space-y-8 p-5">
 			<article class="prose max-w-5xl">
 				<h1>{meta.title}</h1>
+				<PublishedDate date={meta.publishedAt} />
 
 				<p>
 					GeminiのCanvas機能でゲームを作ってみる体験型ワークショップです。
@@ -97,6 +99,10 @@ export function Template() {
 				<p>
 					<img
 						src="/articles/workshop-gemini-canvas/gemini-logged-in.png"
+						width={1141}
+						height={1026}
+						loading="lazy"
+						decoding="async"
 						alt="Geminiにログインした状態画面キャプチャ"
 					/>
 				</p>
@@ -123,6 +129,10 @@ export function Template() {
 				<p>
 					<img
 						src="/articles/workshop-gemini-canvas/gemini-complete.png"
+						width={1159}
+						height={1323}
+						loading="lazy"
+						decoding="async"
 						alt="Gemini Canvasでゲームが完成した状態画面キャプチャ"
 					/>
 				</p>
@@ -176,6 +186,10 @@ export function Template() {
 				<p>
 					<img
 						src="/articles/workshop-gemini-canvas/gemini-share.png"
+						width={1135}
+						height={1301}
+						loading="lazy"
+						decoding="async"
 						alt="Geminiの共有画面キャプチャ"
 					/>
 				</p>

@@ -3,6 +3,7 @@ import type { FC } from "hono/jsx";
 import type { Article } from "./article";
 import type { Book, BookChapter } from "./book";
 import { site } from "./site";
+import { articleJsonLd, bookJsonLd, chapterJsonLd } from "./structured-data";
 
 /** ルートファイル（index.tsx）が export するもの */
 type Page = { GET: Handler; ssg: true };
@@ -17,6 +18,9 @@ export function articlePage(article: Article, Template: FC): Page {
 				description: article.description,
 				ogImage: article.ogp,
 				noindex: article.noindex,
+				type: "article",
+				publishedAt: article.publishedAt,
+				jsonLd: articleJsonLd(article),
 			}),
 	};
 }
@@ -30,6 +34,7 @@ export function bookPage(book: Book, Template: FC): Page {
 				title: `${book.title} | ${site.name}`,
 				description: book.description,
 				ogImage: book.ogp,
+				jsonLd: bookJsonLd(book),
 			}),
 	};
 }
@@ -47,6 +52,8 @@ export function chapterPage(
 				title: `${chapter.title} | ${book.title} | ${site.name}`,
 				description: chapter.description,
 				ogImage: book.ogp,
+				type: "article",
+				jsonLd: chapterJsonLd(book, chapter),
 			}),
 	};
 }
