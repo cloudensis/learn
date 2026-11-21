@@ -1,0 +1,25 @@
+import { PromptBlock } from "@/routes/_components/prompt-block";
+
+type AskAiProps = {
+	/** 何のための質問かを示す見出し。 */
+	title?: string;
+	/** プロンプトの下に添える補足。 */
+	note?: string;
+	/** AIに送るプロンプト本文。 */
+	children: string;
+};
+
+/** AIに投げるプロンプトを示すブロック。本文をクリックすると全選択できる。 */
+export function AskAi({
+	title = "AIに聞いてみましょう",
+	note,
+	children,
+}: AskAiProps) {
+	return (
+		<div class="space-y-2">
+			<p class="text-sm font-medium">{title}</p>
+			<PromptBlock>{children}</PromptBlock>
+			{note && <p class="text-sm">{note}</p>}
+		</div>
+	);
+}

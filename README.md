@@ -41,25 +41,17 @@
 | URL  | `/articles/<slug>` | `/books/<slug>`、章は `/books/<slug>/<chapter>` |
 
 book は対象読者とゴールを1冊ごとに定める。冒頭で対象を明示し、その読者に必要な深さで書く。
-各 book の設計は、その book のフォルダの README（例：`src/interfaces/routes/books/first-steps/README.md`）に書く。
+各 book の設計は、その book のフォルダの README（例：`src/routes/books/first-steps/README.md`）に書く。
 
 ## 開発
 
-```sh
-npm install
-npm run dev        # 開発サーバー（Workers のランタイムで動かす）
-npm run lint       # Biome
-npm run format     # 自動修正
-npm run typecheck  # 型エラーチェック
-npm run build      # 静的サイトとして .cloudflare/output/ に書き出す
-```
+| コマンド            | 内容               |
+| ------------------- | ------------------ |
+| `npm run dev`       | 開発サーバーを起動 |
+| `npm run build`     | ビルドと SSG       |
+| `npm test`          | テスト             |
+| `npm run lint`      | lint               |
+| `npm run format`    | 整形               |
+| `npm run typecheck` | 型チェック         |
 
-サーバーサイドの処理は持たない静的サイトです。ビルドは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。開発中は Hono のアプリを Workers のランタイムで動かし、`npm run build` では `hono/ssg` で全ページを HTML として書き出します（`scripts/ssg.ts`）。
-
-デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers の Static Assets（Worker スクリプトなし）へ行われます。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
-
-```sh
-npx cf auth login
-npx cf previews deploy   # 現在のブランチ名で Preview をデプロイ
-npx cf deploy            # 本番にデプロイ
-```
+Release を公開すると本番に、Actions の Preview を手動で実行するとブランチ名で Preview にデプロイされます。

@@ -10,7 +10,8 @@
 
 # deps
 node_modules/
-.cloudflare/
+.cloudflare
+.wrangler
 
 # env
 .env

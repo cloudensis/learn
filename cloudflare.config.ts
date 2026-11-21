@@ -1,13 +1,9 @@
 import { defineConfig } from "cf/config";
 
-export default defineConfig(() => ({
+export default defineConfig({
 	worker: {
 		name: "learn",
-		compatibilityDate: "2026-10-01",
+		compatibilityDate: "2026-10-30",
 		entrypoint: "./src/index.tsx",
-		assets: {
-			htmlHandling: "auto-trailing-slash",
-			notFoundHandling: "404-page",
-		},
 	},
-}));
+});
