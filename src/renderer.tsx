@@ -3,13 +3,24 @@ import { Link, Script, ViteClient } from "vite-ssr-components/hono";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { site } from "./lib/site";
+import type { JsonLd } from "./lib/structured-data";
 
 export type Meta = {
 	title?: string;
 	description?: string;
 	ogImage?: string;
 	noindex?: boolean;
+	/** og:type。記事や章は article にする */
+	type?: "website" | "article";
+	/** 公開日（YYYY-MM-DD）。article:published_time に使う */
+	publishedAt?: string;
+	/** 構造化データ（JSON-LD） */
+	jsonLd?: JsonLd[];
 };
+
+/** script 要素の中に置くため、`<` をエスケープして `</script>` で閉じられないようにする */
+const serializeJsonLd = (data: JsonLd) =>
+	JSON.stringify(data).replace(/</g, "\\u003c");
 
 type Render = (content: string | Promise<string>, meta?: Meta) => Response;
 
@@ -18,7 +29,16 @@ declare module "hono" {
 }
 
 export const renderer = jsxRenderer(
-	({ children, title, description, ogImage, noindex }) => {
+	({
+		children,
+		title,
+		description,
+		ogImage,
+		noindex,
+		type = "website",
+		publishedAt,
+		jsonLd = [],
+	}) => {
 		const c = useRequestContext();
 		const canonicalUrl = new URL(c.req.path, site.url).toString();
 		const pageTitle = title ?? site.name;
@@ -38,14 +58,24 @@ export const renderer = jsxRenderer(
 					<link rel="canonical" href={canonicalUrl} />
 					{noindex && <meta name="robots" content="noindex, nofollow" />}
 
-					<meta property="og:type" content="website" />
+					<meta property="og:type" content={type} />
 					<meta property="og:site_name" content={site.name} />
 					<meta property="og:title" content={pageTitle} />
 					<meta property="og:description" content={pageDescription} />
 					<meta property="og:url" content={canonicalUrl} />
 					<meta property="og:image" content={ogImageUrl} />
 					<meta property="og:locale" content="ja_JP" />
-					<meta name="twitter:card" content="summary" />
+					{publishedAt && (
+						<meta property="article:published_time" content={publishedAt} />
+					)}
+					<meta name="twitter:card" content="summary_large_image" />
+					{jsonLd.map((data) => (
+						<script
+							key={data["@type"]}
+							type="application/ld+json"
+							dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
+						/>
+					))}
 
 					<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 					<link rel="apple-touch-icon" href="/logo.png" />
