@@ -45,56 +45,15 @@ book は対象読者とゴールを1冊ごとに定める。冒頭で対象を�
 
 ## 開発
 
-| コマンド            | 内容                                  |
-| ------------------- | ------------------------------------- |
-| `npm run dev`       | 開発サーバー（Workers のランタイム）  |
-| `npm run build`     | ビルドと SSG（`.cloudflare/output/`） |
-| `npm test`          | テスト（Vitest）                      |
-| `npm run lint`      | lint（Biome）                         |
-| `npm run format`    | 整形                                  |
-| `npm run typecheck` | 型チェック                            |
+[create-hono](https://github.com/cloudensis/create-hono) のテンプレートと同じ構成です。ルーティングと SSG はテンプレートの README を参照してください。
 
-構成は [create-hono](https://github.com/cloudensis/create-hono) のテンプレートに合わせています。ビルドは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。
+| コマンド            | 内容               |
+| ------------------- | ------------------ |
+| `npm run dev`       | 開発サーバーを起動 |
+| `npm run build`     | ビルドと SSG       |
+| `npm test`          | テスト             |
+| `npm run lint`      | lint               |
+| `npm run format`    | 整形               |
+| `npm run typecheck` | 型チェック         |
 
-### ディレクトリ
-
-| パス               | 内容                                 |
-| ------------------ | ------------------------------------ |
-| `src/index.tsx`    | Hono のアプリ                        |
-| `src/renderer.tsx` | HTML の共通レイアウトとメタタグ      |
-| `src/style.css`    | Tailwind と design-system の読み込み |
-| `src/routes/`      | ルート（ファイルベースルーティング） |
-| `src/components/`  | ページ共通のコンポーネント           |
-| `src/lib/`         | 型・定数・ルーター                   |
-| `src/scripts/`     | ブラウザで動くスクリプト             |
-
-### ルーティング
-
-`src/routes` 以下の `index.ts` / `index.tsx` がルートになり、フォルダ名がそのまま URL になります。`index` 以外のファイル（`meta.ts`、`template.tsx`、`_components/` など）はルートになりません。
-
-| ファイル                                                     | パス                                         |
-| ------------------------------------------------------------ | -------------------------------------------- |
-| `routes/index.tsx`                                           | `/`                                          |
-| `routes/articles/code-editor/index.tsx`                      | `/articles/code-editor`                      |
-| `routes/books/first-steps/01-how-to-use-this-book/index.tsx` | `/books/first-steps/01-how-to-use-this-book` |
-
-HTTP メソッド名（`GET` など）でハンドラーを export し、`ssg = true` を export したルートは `npm run build` で静的 HTML に書き出されます（`scripts/ssg.mjs`）。`meta.ts` の `slug` はフォルダ名と同じにしてください。
-
-```tsx
-import type { Handler } from "hono";
-
-export const ssg = true;
-
-export const GET: Handler = (c) =>
-	c.render(<Template />, { title: "タイトル", description: "説明" });
-```
-
-## デプロイ
-
-GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers へデプロイします。SSG したページは Static Assets から配信し、それ以外（404 など）は Worker が返します。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
-
-```sh
-npx cf auth login
-npm run build && npx cf deploy --prebuilt   # 本番にデプロイ
-CLOUDFLARE_PREVIEW_BUILD=true npm run build && npx cf previews deploy --prebuilt   # Preview
-```
+Release を公開すると本番に、Actions の Preview を手動で実行するとブランチ名で Preview にデプロイされます。
