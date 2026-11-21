@@ -14,7 +14,10 @@ jobs:
       - id: metadata
         uses: dependabot/fetch-metadata@v3
       # major は手動でレビューする
-      - if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+      # RC などのプレリリース版（バージョンに - を含む）も手動でレビューする
+      - if: >-
+          steps.metadata.outputs.update-type != 'version-update:semver-major' &&
+          !contains(steps.metadata.outputs.new-version, '-')
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}

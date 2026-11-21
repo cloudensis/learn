@@ -54,4 +54,6 @@ book は対象読者とゴールを1冊ごとに定める。冒頭で対象を�
 | `npm run format`    | 整形               |
 | `npm run typecheck` | 型チェック         |
 
+Node のバージョンは `.node-version` で指定します。`cf` と `@cloudflare/vite-plugin` は RC 版のため、Dependabot の更新は自動マージせず手動で確かめます。
+
 Release を公開すると本番に、Actions の Preview を手動で実行するとブランチ名で Preview にデプロイされます。
