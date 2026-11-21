@@ -1,5 +1,4 @@
 import { PromptBlock } from "@/routes/_components/prompt-block";
-import { PublishedDate } from "@/routes/_components/published-date";
 import meta from "./meta";
 
 const steps = [
@@ -38,7 +37,6 @@ export function Template() {
 		<div class="mx-auto max-w-5xl space-y-8 p-5">
 			<article class="prose max-w-5xl">
 				<h1>{meta.title}</h1>
-				<PublishedDate date={meta.publishedAt} />
 
 				<p>
 					GeminiのCanvas機能でゲームを作ってみる体験型ワークショップです。
