@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @import "@cloudensis/design-system/index.css";
+
+/*
+ * design-system は 0.15.0 からトークンを @theme ではなく :root に書くため、
+ * Tailwind のユーティリティで使うトークンをここで登録する。
+ * inline で値を var() のまま使い、reference で変数を二重に書き出さない。
+ */
+@theme inline reference {
+	--border-color-default: var(--border-color-default);
+}
