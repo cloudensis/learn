@@ -41,25 +41,60 @@
 | URL  | `/articles/<slug>` | `/books/<slug>`、章は `/books/<slug>/<chapter>` |
 
 book は対象読者とゴールを1冊ごとに定める。冒頭で対象を明示し、その読者に必要な深さで書く。
-各 book の設計は、その book のフォルダの README（例：`src/interfaces/routes/books/first-steps/README.md`）に書く。
+各 book の設計は、その book のフォルダの README（例：`src/routes/books/first-steps/README.md`）に書く。
 
 ## 開発
 
-```sh
-npm install
-npm run dev        # 開発サーバー（Workers のランタイムで動かす）
-npm run lint       # Biome
-npm run format     # 自動修正
-npm run typecheck  # 型エラーチェック
-npm run build      # 静的サイトとして .cloudflare/output/ に書き出す
+| コマンド            | 内容                                  |
+| ------------------- | ------------------------------------- |
+| `npm run dev`       | 開発サーバー（Workers のランタイム）  |
+| `npm run build`     | ビルドと SSG（`.cloudflare/output/`） |
+| `npm test`          | テスト（Vitest）                      |
+| `npm run lint`      | lint（Biome）                         |
+| `npm run format`    | 整形                                  |
+| `npm run typecheck` | 型チェック                            |
+
+構成は [create-hono](https://github.com/cloudensis/create-hono) のテンプレートに合わせています。ビルドは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。
+
+### ディレクトリ
+
+| パス               | 内容                                 |
+| ------------------ | ------------------------------------ |
+| `src/index.tsx`    | Hono のアプリ                        |
+| `src/renderer.tsx` | HTML の共通レイアウトとメタタグ      |
+| `src/style.css`    | Tailwind と design-system の読み込み |
+| `src/routes/`      | ルート（ファイルベースルーティング） |
+| `src/components/`  | ページ共通のコンポーネント           |
+| `src/lib/`         | 型・定数・ルーター                   |
+| `src/scripts/`     | ブラウザで動くスクリプト             |
+
+### ルーティング
+
+`src/routes` 以下の `index.ts` / `index.tsx` がルートになり、フォルダ名がそのまま URL になります。`index` 以外のファイル（`meta.ts`、`template.tsx`、`_components/` など）はルートになりません。
+
+| ファイル                                                     | パス                                         |
+| ------------------------------------------------------------ | -------------------------------------------- |
+| `routes/index.tsx`                                           | `/`                                          |
+| `routes/articles/code-editor/index.tsx`                      | `/articles/code-editor`                      |
+| `routes/books/first-steps/01-how-to-use-this-book/index.tsx` | `/books/first-steps/01-how-to-use-this-book` |
+
+HTTP メソッド名（`GET` など）でハンドラーを export し、`ssg = true` を export したルートは `npm run build` で静的 HTML に書き出されます（`scripts/ssg.mjs`）。`meta.ts` の `slug` はフォルダ名と同じにしてください。
+
+```tsx
+import type { Handler } from "hono";
+
+export const ssg = true;
+
+export const GET: Handler = (c) =>
+	c.render(<Template />, { title: "タイトル", description: "説明" });
 ```
 
-サーバーサイドの処理は持たない静的サイトです。ビルドは Cloudflare CLI（[cf](https://www.npmjs.com/package/cf)）と `@cloudflare/vite-plugin` で行い、設定は `cloudflare.config.ts` にあります。開発中は Hono のアプリを Workers のランタイムで動かし、`npm run build` では `hono/ssg` で全ページを HTML として書き出します（`scripts/ssg.ts`）。
+## デプロイ
 
-デプロイは GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers の Static Assets（Worker スクリプトなし）へ行われます。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
+GitHub の Release 公開をトリガーに、GitHub Actions から Cloudflare Workers へデプロイします。SSG したページは Static Assets から配信し、それ以外（404 など）は Worker が返します。Preview は Actions の手動実行で、実行したブランチ名でデプロイされます。
 
 ```sh
 npx cf auth login
-npx cf previews deploy   # 現在のブランチ名で Preview をデプロイ
-npx cf deploy            # 本番にデプロイ
+npm run build && npx cf deploy --prebuilt   # 本番にデプロイ
+CLOUDFLARE_PREVIEW_BUILD=true npm run build && npx cf previews deploy --prebuilt   # Preview
 ```
