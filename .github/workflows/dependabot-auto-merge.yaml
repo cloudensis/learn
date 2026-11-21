@@ -13,7 +13,8 @@ jobs:
     steps:
       - id: metadata
         uses: dependabot/fetch-metadata@v3
-      # major と、RC などのプレリリース版（バージョンに - を含む）は手動でレビューする
+      # major は手動でレビューする
+      # RC などのプレリリース版（バージョンに - を含む）も手動でレビューする
       - if: >-
           steps.metadata.outputs.update-type != 'version-update:semver-major' &&
           !contains(steps.metadata.outputs.new-version, '-')
