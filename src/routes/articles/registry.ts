@@ -1,4 +1,5 @@
 import type { Article } from "@/lib/article";
+import { collectMeta } from "@/lib/registry";
 
 const metaModules = import.meta.glob<{ default: Article }>("./*/meta.ts", {
 	eager: true,
@@ -9,7 +10,6 @@ const metaModules = import.meta.glob<{ default: Article }>("./*/meta.ts", {
  * 記事を追加する際は meta.ts を置くだけでホームなどの一覧に反映される。
  * noindex の記事は一覧に出さない。
  */
-export const articles: Article[] = Object.values(metaModules)
-	.map((module) => module.default)
+export const articles: Article[] = collectMeta(metaModules)
 	.filter((article) => !article.noindex)
 	.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));

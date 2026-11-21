@@ -3,7 +3,10 @@ import { ChapterHeader } from "@/routes/books/_components/chapter-header";
 import { ChapterNav } from "@/routes/books/_components/chapter-nav";
 import { Checklist } from "@/routes/books/_components/checklist";
 import { Troubleshoot } from "@/routes/books/_components/troubleshoot";
-import { askStyles } from "@/routes/books/first-steps/_components/ask-styles";
+import {
+	askStyleChapterLabel,
+	askStyles,
+} from "@/routes/books/first-steps/_components/ask-styles";
 import book from "@/routes/books/first-steps/meta";
 import meta from "./meta";
 
@@ -187,7 +190,8 @@ export function Template() {
 				<ul>
 					{Object.values(askStyles).map((style) => (
 						<li key={style.id}>
-							<strong>{style.name}</strong>（第{style.chapter}章）：{style.use}
+							<strong>{style.name}</strong>（{askStyleChapterLabel(style)}）：
+							{style.use}
 						</li>
 					))}
 				</ul>
